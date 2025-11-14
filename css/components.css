@@ -140,8 +140,8 @@
 
 /* Logo */
 .logo {
-  width: 350px;
-  height: 350px;
+  width: 245px;
+  height: 245px;
   margin-bottom: var(--spacing-md);
   border: none;
   border-radius: 50%;
@@ -595,8 +595,8 @@
   }
   
   .logo {
-    width: 250px;
-    height: 250px;
+    width: 175px;
+    height: 175px;
   }
   
   .hero-cta {
