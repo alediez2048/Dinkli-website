@@ -730,7 +730,7 @@
 }
 
 .page-header .logo {
-  height: 50px;
+  height: 75px;
   width: auto;
   transition: transform 0.2s ease;
 }
@@ -747,7 +747,7 @@
   }
   
   .page-header .logo {
-    height: 40px;
+    height: 60px;
   }
   
   .logo {
