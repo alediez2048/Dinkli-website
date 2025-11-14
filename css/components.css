@@ -113,7 +113,7 @@
 }
 
 .hero-image img {
-  width: 70%;
+  width: 56%;
   height: auto;
   border: var(--border-thick) solid var(--black);
   box-shadow: 12px 12px 0 var(--green-primary);
@@ -359,7 +359,7 @@
 }
 
 .feature-image {
-  width: 70%;
+  width: 56%;
   height: auto;
   border: var(--border-thick) solid var(--black);
   margin: 0 auto var(--spacing-md);
