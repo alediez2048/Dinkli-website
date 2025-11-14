@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Dinkli - Get in touch with us for support, questions, or feedback.">
+    <title>Contact Us - Dinkli</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Header -->
+    <header style="padding: var(--spacing-md); border-bottom: var(--border-thick) solid var(--black); background-color: rgba(255, 255, 255, 0.95); position: sticky; top: 0; z-index: 100;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="text-decoration: none; color: var(--black); font-weight: var(--font-bold); font-size: 1.5rem;">
+                DINKLI
+            </a>
+            <a href="index.html" class="btn btn-secondary" style="text-decoration: none;">Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <section class="section" style="padding-top: var(--spacing-xl);">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: var(--spacing-xl);">Contact <span class="text-green">Us</span></h1>
+            
+            <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+                <!-- Contact Information -->
+                <div class="card">
+                    <h2 style="margin-bottom: var(--spacing-md); color: var(--green-primary);">Get in Touch</h2>
+                    <p style="margin-bottom: var(--spacing-lg);">Have questions, feedback, or need support? We'd love to hear from you!</p>
+                    
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Email</h3>
+                        <p><a href="mailto:support@dinkli.com" style="color: var(--green-primary); text-decoration: none; font-weight: var(--font-bold);">support@dinkli.com</a></p>
+                    </div>
+                    
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Location</h3>
+                        <p>Austin, Texas</p>
+                    </div>
+                    
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Response Time</h3>
+                        <p>We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card">
+                    <h2 style="margin-bottom: var(--spacing-md); color: var(--green-primary);">Send us a Message</h2>
+                    <form style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <label for="name" style="display: block; margin-bottom: var(--spacing-xs); font-weight: var(--font-bold);">Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required
+                                style="width: 100%; padding: var(--spacing-sm); border: var(--border-thick) solid var(--black); font-size: 1rem; font-family: var(--font-primary);"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="email" style="display: block; margin-bottom: var(--spacing-xs); font-weight: var(--font-bold);">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                style="width: 100%; padding: var(--spacing-sm); border: var(--border-thick) solid var(--black); font-size: 1rem; font-family: var(--font-primary);"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="subject" style="display: block; margin-bottom: var(--spacing-xs); font-weight: var(--font-bold);">Subject *</label>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject" 
+                                required
+                                style="width: 100%; padding: var(--spacing-sm); border: var(--border-thick) solid var(--black); font-size: 1rem; font-family: var(--font-primary);"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="message" style="display: block; margin-bottom: var(--spacing-xs); font-weight: var(--font-bold);">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                required
+                                style="width: 100%; padding: var(--spacing-sm); border: var(--border-thick) solid var(--black); font-size: 1rem; font-family: var(--font-primary); resize: vertical;"
+                            ></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%; margin-top: var(--spacing-sm);">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dinkli</h3>
+                <p>Pickleball without all the hassle. Guaranteed pickleball playtime, skill-based matching, and equipment provided.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dinkli. All rights reserved. ESTD 2025</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
