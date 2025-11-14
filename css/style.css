@@ -191,6 +191,28 @@ p {
   font-size: clamp(2rem, 4vw, 3rem);
   text-transform: uppercase;
   letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--green-primary), transparent);
+  transform: translateY(-50%);
+}
+
+.section-title::before {
+  left: 0;
+}
+
+.section-title::after {
+  right: 0;
 }
 
 /* Container */
