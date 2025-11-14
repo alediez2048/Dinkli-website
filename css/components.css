@@ -298,8 +298,10 @@
   width: 40px;
   height: 40px;
   stroke: var(--black);
-  stroke-width: 3;
+  stroke-width: 2.5;
   fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .value-prop-title {
