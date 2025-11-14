@@ -1,0 +1,259 @@
+/* ============================================
+   DINKLI - Neurobrutalism Design System
+   ============================================ */
+
+/* CSS Variables - Brand Colors */
+:root {
+  --green-primary: #00FF00;
+  --green-dark: #00CC00;
+  --green-light: #66FF66;
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-dark: #333333;
+  
+  /* Neurobrutalism Borders */
+  --border-thick: 4px;
+  --border-medium: 3px;
+  --border-thin: 2px;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  
+  /* Typography */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-bold: 700;
+  --font-semibold: 600;
+  --font-medium: 500;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+/* Neurobrutalism Components */
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-weight: var(--font-bold);
+  text-decoration: none;
+  text-align: center;
+  border: var(--border-thick) solid var(--black);
+  background-color: var(--green-primary);
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 6px 6px 0 var(--black);
+  position: relative;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--green-primary);
+  color: var(--black);
+}
+
+/* Cards */
+.card {
+  background-color: var(--white);
+  border: var(--border-thick) solid var(--black);
+  padding: var(--spacing-md);
+  box-shadow: 8px 8px 0 var(--black);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--black);
+}
+
+.card-green {
+  border-color: var(--green-primary);
+  box-shadow: 8px 8px 0 var(--green-primary);
+}
+
+/* Sections */
+.section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-green {
+  color: var(--green-primary);
+}
+
+.bg-green {
+  background-color: var(--green-primary);
+}
+
+.bg-black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.border-thick {
+  border: var(--border-thick) solid var(--black);
+}
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+/* Mobile First - Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 1.25rem 2rem;
+  }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States */
+*:focus {
+  outline: 3px solid var(--green-primary);
+  outline-offset: 2px;
+}
+

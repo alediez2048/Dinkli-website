@@ -321,12 +321,51 @@ Dinkli/
 
 ---
 
+## Brand Assets & Design Direction
+
+### **Brand Colors**
+- **Primary**: Highlighter Green (#00FF00 or similar vibrant green)
+- **Secondary**: Black (#000000)
+- **Background**: White (#FFFFFF)
+- **Accent**: High contrast combinations
+
+### **Logo**
+- Circular logo with green and white
+- Features pickleball character with paddles
+- Tagline: "Guaranteed Playtime"
+- Established 2025
+
+### **Design Style: Neurobrutalism**
+- **Key Characteristics**:
+  - Bold, thick borders (3-5px)
+  - High contrast (black, white, bright green)
+  - Geometric shapes with sharp or bold rounded corners
+  - Playful, energetic aesthetic
+  - Strong, bold typography
+  - Layered elements with shadows/borders
+  - Bright accent colors (highlighter green)
+  - Card-based layouts with prominent borders
+  - Energetic, modern feel
+
+### **App Screenshots Available**
+- Home screen with "Find Games" CTA
+- Game listings with skill levels (Beginner/Intermediate/Advanced)
+- Profile screen with membership options
+- Clean, modern UI matching neurobrutalism aesthetic
+
+### **Typography**
+- Bold, sans-serif fonts
+- High contrast text
+- Clear hierarchy
+
+---
+
 ## Questions to Consider
 
-- Do you have app screenshots/mockups ready?
-- What are your brand colors?
-- Do you have a logo?
+- ~~Do you have app screenshots/mockups ready?~~ ✅ Yes
+- ~~What are your brand colors?~~ ✅ Highlighter green
+- ~~Do you have a logo?~~ ✅ Yes
 - Any existing user testimonials?
 - Target launch date?
-- Any specific design inspiration/references?
+- ~~Any specific design inspiration/references?~~ ✅ Neurobrutalism
 
