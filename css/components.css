@@ -55,19 +55,21 @@
 }
 
 .hero-image img {
-  width: 100%;
+  width: 70%;
   height: auto;
   border: var(--border-thick) solid var(--black);
   box-shadow: 12px 12px 0 var(--green-primary);
   border-radius: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Logo */
 .logo {
-  width: 200px;
-  height: 200px;
+  width: 350px;
+  height: 350px;
   margin-bottom: var(--spacing-md);
-  border: var(--border-thick) solid var(--black);
+  border: none;
   border-radius: 50%;
   box-shadow: 8px 8px 0 var(--green-primary);
 }
@@ -164,12 +166,13 @@
 }
 
 .feature-image {
-  width: 100%;
+  width: 70%;
   height: auto;
   border: var(--border-thick) solid var(--black);
-  margin-bottom: var(--spacing-md);
+  margin: 0 auto var(--spacing-md);
   box-shadow: 6px 6px 0 var(--green-primary);
   border-radius: 10px;
+  display: block;
 }
 
 /* Pricing */
@@ -357,6 +360,11 @@
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+  
+  .logo {
+    width: 250px;
+    height: 250px;
   }
   
   .hero-cta {

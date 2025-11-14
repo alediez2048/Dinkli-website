@@ -1,0 +1,20 @@
+{
+  "name": "dinkli-website",
+  "version": "1.0.0",
+  "description": "Dinkli landing page and marketing website",
+  "scripts": {
+    "start": "http-server -p 8000 -o",
+    "dev": "http-server -p 8000 -o"
+  },
+  "keywords": [
+    "pickleball",
+    "landing-page",
+    "website"
+  ],
+  "author": "Dinkli",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+
