@@ -523,7 +523,7 @@
 .map-container iframe {
   display: block;
   width: 100%;
-  height: 450px;
+  height: 675px;
   border: none;
   border-radius: 0;
   filter: 
@@ -542,7 +542,7 @@
 
 .map-container #map {
   width: 100%;
-  height: 450px;
+  height: 675px;
   border: none;
 }
 
