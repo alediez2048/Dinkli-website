@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--spacing-xl) var(--spacing-md);
-  background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -180,7 +180,7 @@
 
 /* Value Props */
 .value-props {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
   overflow: hidden;
 }
@@ -359,7 +359,7 @@
 
 /* Features */
 .features {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
   overflow: hidden;
 }
@@ -507,7 +507,7 @@
 
 /* Location */
 .location {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
   overflow: hidden;
 }
@@ -568,7 +568,7 @@
 
 /* FAQ */
 .faq {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
   overflow: hidden;
 }
