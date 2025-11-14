@@ -251,6 +251,8 @@
 .value-prop-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 1;
 }
 
 .value-prop-title {
@@ -258,6 +260,13 @@
   margin-bottom: var(--spacing-sm);
   color: var(--black);
   font-weight: var(--font-bold);
+  position: relative;
+  z-index: 1;
+}
+
+.value-prop-card p {
+  position: relative;
+  z-index: 1;
 }
 
 /* How It Works */
