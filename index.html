@@ -3,66 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinkli</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .status {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: #f0f0f0;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
+    <meta name="description" content="Dinkli - Find and join affordable pickleball games on public courts. Guaranteed playtime, skill-based matching, and equipment provided. Download the app today!">
+    <meta name="keywords" content="pickleball, pickleball games, pickleball app, local pickleball, affordable pickleball">
+    <meta property="og:title" content="Dinkli - Pickleball Without the Court Costs">
+    <meta property="og:description" content="Find and join affordable pickleball games on public courts. Guaranteed playtime, skill-based matching, and equipment provided.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dinkli.com">
+    <title>Dinkli - Pickleball Without the Court Costs</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Dinkli</h1>
-        <p>Welcome to the Dinkli website</p>
-        <div class="status">🚀 Website is live!</div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <img src="images/logos/dinkli-logo.png" alt="Dinkli Logo" class="logo">
+                    <h1 class="hero-title">
+                        Pickleball Without<br>
+                        <span class="text-green">the Court Costs</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Find and join affordable pickleball games on public courts. 
+                        Guaranteed playtime, skill-based matching, and equipment provided.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#download" class="btn">Download Free</a>
+                        <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+                    </div>
+                    <div class="app-buttons mt-md">
+                        <a href="#" class="app-button" aria-label="Download on App Store">
+                            <span>Download on App Store</span>
+                        </a>
+                        <a href="#" class="app-button" aria-label="Get it on Google Play">
+                            <span>Get it on Google Play</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/app-screenshots/home-screen.png" alt="Dinkli App Home Screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="section value-props" id="value-props">
+        <div class="container">
+            <h2 class="section-title">Why Choose <span class="text-green">Dinkli</span>?</h2>
+            <div class="grid grid-3">
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">💰</div>
+                    <h3 class="value-prop-title">Affordable</h3>
+                    <p>Play for just $10 per game or $50/month. No expensive court rentals needed - we use public courts!</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">⏰</div>
+                    <h3 class="value-prop-title">Guaranteed Playtime</h3>
+                    <p>No more waiting lists or full courts. Reserve your spot and play when you want.</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">🎯</div>
+                    <h3 class="value-prop-title">Skill Matching</h3>
+                    <p>Play with players at your level. Beginner, Intermediate, or Advanced - find your perfect match.</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">🏀</div>
+                    <h3 class="value-prop-title">Public Courts</h3>
+                    <p>Games organized on outdoor public courts - basketball courts, football fields, any concrete surface works!</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">🎾</div>
+                    <h3 class="value-prop-title">Equipment Provided</h3>
+                    <p>Game captains bring nets, rackets, and balls. Just show up and play!</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">📍</div>
+                    <h3 class="value-prop-title">Local Games</h3>
+                    <p>Find games near you. Join your local pickleball community and make new friends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It <span class="text-green">Works</span></h2>
+            <div class="grid grid-4">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Download the App</h3>
+                    <p>Get Dinkli from the App Store or Google Play. It's free to download!</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Create Your Profile</h3>
+                    <p>Add your personal information and set your skill level (Beginner, Intermediate, or Advanced).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Find Games</h3>
+                    <p>Browse available games near you. Filter by location, time, and skill level.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Reserve & Play</h3>
+                    <p>Reserve your spot, pay $10 per game or use your $50/month membership, and show up to play!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="section features" id="features">
+        <div class="container">
+            <h2 class="section-title">App <span class="text-green">Features</span></h2>
+            <div class="grid grid-2">
+                <div class="feature-card card">
+                    <img src="images/app-screenshots/game-listings.png" alt="Game Listings" class="feature-image">
+                    <h3>Browse Games</h3>
+                    <p>See all available games in your area with times, locations, and skill levels. Filter by what matters to you.</p>
+                </div>
+                <div class="feature-card card">
+                    <img src="images/app-screenshots/profile.png" alt="Profile Screen" class="feature-image">
+                    <h3>Manage Your Profile</h3>
+                    <p>Set your skill level, manage your membership, and track your upcoming games all in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple <span class="text-green">Pricing</span></h2>
+            <div class="grid grid-2">
+                <div class="card pricing-card">
+                    <h3>Pay Per Game</h3>
+                    <div class="pricing-price">$10</div>
+                    <div class="pricing-period">per game</div>
+                    <ul class="pricing-features">
+                        <li>One-time payment</li>
+                        <li>No commitment</li>
+                        <li>Perfect for trying out</li>
+                        <li>Access to all games</li>
+                    </ul>
+                    <a href="#download" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="card pricing-card card-green">
+                    <div class="pricing-badge">Best Value</div>
+                    <h3>Monthly Membership</h3>
+                    <div class="pricing-price">$50</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited games</li>
+                        <li>Save $10+ per game</li>
+                        <li>Priority booking</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="#download" class="btn">Get Started</a>
+                </div>
+            </div>
+            <p class="text-center mt-lg">
+                <strong>Compare:</strong> Traditional court rentals cost $50-100+ per hour. 
+                With Dinkli, you get guaranteed playtime at a fraction of the cost!
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked <span class="text-green">Questions</span></h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What equipment do I need to bring?</div>
+                    <div class="faq-answer">
+                        Nothing! Game captains provide all equipment including nets, rackets, and balls. Just show up ready to play.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Where are the games played?</div>
+                    <div class="faq-answer">
+                        Games are organized on outdoor public courts - basketball courts, football fields, tennis courts, or any concrete surface. We use public spaces to keep costs low.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I know my skill level?</div>
+                    <div class="faq-answer">
+                        Beginner: New to pickleball or playing for less than 6 months. Intermediate: Regular player with 6+ months experience. Advanced: Competitive player with strong skills.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I cancel my membership?</div>
+                    <div class="faq-answer">
+                        Yes! You can cancel your monthly membership at any time. There are no long-term contracts or cancellation fees.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if a game is cancelled?</div>
+                    <div class="faq-answer">
+                        If a game is cancelled due to weather or other reasons, you'll receive a full refund or credit for a future game.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I become a game captain?</div>
+                    <div class="faq-answer">
+                        Game captains are experienced players who organize games. Contact us through the app if you're interested in becoming a captain!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="section bg-green" id="download">
+        <div class="container text-center">
+            <h2 class="section-title">Ready to <span class="text-black">Play</span>?</h2>
+            <p class="mb-lg" style="font-size: 1.25rem; color: var(--black);">
+                Download Dinkli today and join your first game!
+            </p>
+            <div class="app-buttons">
+                <a href="#" class="app-button" aria-label="Download on App Store">
+                    <span>Download on App Store</span>
+                </a>
+                <a href="#" class="app-button" aria-label="Get it on Google Play">
+                    <span>Get it on Google Play</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dinkli</h3>
+                <p>Pickleball without the court costs. Guaranteed playtime, skill-based matching, and equipment provided.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">f</a>
+                    <a href="#" class="social-link" aria-label="Instagram">ig</a>
+                    <a href="#" class="social-link" aria-label="Twitter">t</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dinkli. All rights reserved. ESTD 2025</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
-
