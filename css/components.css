@@ -249,26 +249,17 @@
 .how-it-works::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 255, 0, 0.1) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  animation: pulseCircle 4s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 0, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 20%, rgba(0, 255, 0, 0.08) 0%, transparent 50%);
+  animation: gradientShift 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
-}
-
-@keyframes pulseCircle {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.8;
-  }
 }
 
 .how-it-works .container {
@@ -509,14 +500,50 @@
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
+  border: var(--border-thick) solid var(--black);
+  box-shadow: 8px 8px 0 var(--green-primary);
+  background-color: var(--white);
+}
+
+.map-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(-135deg, rgba(0, 255, 0, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: overlay;
 }
 
 .map-container iframe {
   display: block;
   width: 100%;
-  border: var(--border-thick) solid var(--black);
-  border-radius: 10px;
-  box-shadow: 8px 8px 0 var(--green-primary);
+  height: 450px;
+  border: none;
+  border-radius: 0;
+  filter: 
+    hue-rotate(80deg) 
+    saturate(1.3) 
+    contrast(1.15) 
+    brightness(0.9);
+  position: relative;
+  z-index: 1;
+}
+
+/* Alternative: If using Google Maps JavaScript API, hide iframe */
+.map-container.map-api-active iframe {
+  display: none;
+}
+
+.map-container #map {
+  width: 100%;
+  height: 450px;
+  border: none;
 }
 
 /* FAQ */
