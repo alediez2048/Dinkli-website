@@ -371,6 +371,48 @@
 
 .feature-card {
   padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(0, 255, 0, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(0, 255, 0, 0.1) 0%, transparent 60%);
+  animation: gradientShift 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--green-primary), transparent, var(--green-primary), transparent);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, background-position 0.5s ease;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-image {
@@ -382,12 +424,24 @@
   border-radius: 10px;
   display: block;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 1;
 }
 
 .feature-card:hover .feature-image {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 10px 14px 0 var(--green-primary);
   border-color: var(--green-primary);
+}
+
+.feature-card h3 {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card p {
+  position: relative;
+  z-index: 1;
 }
 
 /* Pricing */
