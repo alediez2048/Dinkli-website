@@ -674,6 +674,59 @@
   border-top: var(--border-thin) solid var(--gray-dark);
 }
 
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: var(--border-thick) solid var(--black);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  background-color: var(--white);
+  transition: all 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  box-shadow: 4px 4px 0 var(--green-primary);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-bold);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Page Header */
+.page-header {
+  padding: var(--spacing-md);
+  border-bottom: var(--border-thick) solid var(--black);
+  background-color: rgba(255, 255, 255, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--font-bold);
+  font-size: 1.5rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content {
