@@ -725,6 +725,18 @@
   color: var(--black);
   font-weight: var(--font-bold);
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.page-header .logo {
+  height: 50px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.page-header .logo:hover {
+  transform: scale(1.05);
 }
 
 /* Responsive */
@@ -732,6 +744,10 @@
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+  
+  .page-header .logo {
+    height: 40px;
   }
   
   .logo {
