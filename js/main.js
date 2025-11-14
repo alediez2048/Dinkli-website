@@ -98,3 +98,73 @@ function toggleMobileMenu() {
   }
 }
 
+// Google Maps Custom Styling (Optional - requires API key)
+// To use: Add your Google Maps API key and uncomment this code
+/*
+function initCustomMap() {
+  const mapContainer = document.querySelector('.map-container');
+  if (!mapContainer) return;
+  
+  // Create map div
+  const mapDiv = document.createElement('div');
+  mapDiv.id = 'map';
+  mapContainer.appendChild(mapDiv);
+  mapContainer.classList.add('map-api-active');
+  
+  // Custom map styles matching neurobrutalism design
+  const customMapStyle = [
+    {
+      featureType: 'all',
+      elementType: 'geometry',
+      stylers: [{ color: '#f5f5f5' }]
+    },
+    {
+      featureType: 'water',
+      stylers: [{ color: '#00FF00' }, { lightness: 80 }]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{ color: '#000000' }, { weight: 2 }]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry.stroke',
+      stylers: [{ color: '#00FF00' }, { weight: 4 }]
+    },
+    {
+      featureType: 'landscape',
+      stylers: [{ color: '#ffffff' }]
+    },
+    {
+      featureType: 'poi',
+      stylers: [{ visibility: 'off' }]
+    }
+  ];
+  
+  // Initialize map (requires Google Maps API)
+  if (typeof google !== 'undefined' && google.maps) {
+    const map = new google.maps.Map(mapDiv, {
+      center: { lat: 30.3075, lng: -97.7555 }, // Austin, TX
+      zoom: 11,
+      styles: customMapStyle,
+      disableDefaultUI: false,
+      zoomControl: true,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: true
+    });
+    
+    // Add marker
+    new google.maps.Marker({
+      position: { lat: 30.3075, lng: -97.7555 },
+      map: map,
+      title: 'Dinkli - Austin, Texas'
+    });
+  }
+}
+
+// Uncomment to use custom map (requires Google Maps API key in HTML)
+// document.addEventListener('DOMContentLoaded', initCustomMap);
+*/
+
