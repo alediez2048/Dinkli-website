@@ -276,32 +276,8 @@
 }
 
 .value-prop-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto var(--spacing-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: var(--border-thick) solid var(--black);
-  background-color: var(--green-primary);
-  border-radius: 12px;
-  box-shadow: 4px 4px 0 var(--black);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.value-prop-card:hover .value-prop-icon {
-  transform: translate(-2px, -2px) scale(1.1);
-  box-shadow: 6px 6px 0 var(--black);
-}
-
-.value-prop-icon svg {
-  width: 40px;
-  height: 40px;
-  stroke: var(--black);
-  stroke-width: 2.5;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .value-prop-title {
