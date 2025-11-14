@@ -473,6 +473,26 @@
   font-size: 1.25rem;
 }
 
+/* Location */
+.location {
+  background-color: var(--white);
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
 /* FAQ */
 .faq {
   background-color: var(--white);
