@@ -48,34 +48,7 @@
   }
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 255, 0, 0.03) 2px,
-      rgba(0, 255, 0, 0.03) 4px
-    );
-  animation: gridMove 20s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
+/* Hero grid removed - now using global body grid */
 
 .hero-content {
   max-width: 1200px;
@@ -84,6 +57,8 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-text {
@@ -208,6 +183,30 @@
   background-color: var(--white);
   position: relative;
   overflow: hidden;
+}
+
+.value-props::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0, 255, 0, 0.03) 20px, rgba(0, 255, 0, 0.03) 40px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(0, 255, 0, 0.03) 20px, rgba(0, 255, 0, 0.03) 40px);
+  animation: backgroundMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 40px 40px, -40px -40px;
+  }
 }
 
 .value-props::before {
@@ -361,6 +360,39 @@
 /* Features */
 .features {
   background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 255, 0, 0.05) 0%, transparent 50%);
+  animation: featureBackground 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes featureBackground {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(50px, 50px) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.features .container {
+  position: relative;
+  z-index: 1;
 }
 
 .feature-card {
@@ -476,6 +508,45 @@
 /* Location */
 .location {
   background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.location::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%),
+    polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+  background-size: 200% 200%;
+  background-position: 0% 0%, 100% 100%;
+  background-color: transparent;
+  background-image: 
+    linear-gradient(135deg, rgba(0, 255, 0, 0.03) 0%, transparent 50%),
+    linear-gradient(-135deg, rgba(0, 255, 0, 0.03) 0%, transparent 50%);
+  animation: locationPattern 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes locationPattern {
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%;
+    opacity: 1;
+  }
+  50% {
+    background-position: 100% 100%, 0% 0%;
+    opacity: 0.7;
+  }
+}
+
+.location .container {
+  position: relative;
+  z-index: 1;
 }
 
 .map-container {
@@ -498,6 +569,38 @@
 /* FAQ */
 .faq {
   background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.faq::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(0, 255, 0, 0.02) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(0, 255, 0, 0.02) 50%, transparent 100%);
+  background-size: 100px 100px, 100px 100px;
+  animation: faqGrid 10s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes faqGrid {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 100px 100px;
+  }
+}
+
+.faq .container {
+  position: relative;
+  z-index: 1;
 }
 
 .faq-item {
