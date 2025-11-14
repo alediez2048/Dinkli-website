@@ -55,11 +55,13 @@
 }
 
 .hero-image img {
-  width: 100%;
+  width: 70%;
   height: auto;
   border: var(--border-thick) solid var(--black);
   box-shadow: 12px 12px 0 var(--green-primary);
   border-radius: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Logo */
