@@ -57,9 +57,29 @@ Dinkli/
    - Add your logo to `images/logos/dinkli-logo.png`
    - Add app screenshots to `images/app-screenshots/`
 
-3. **Open in Browser**
-   - Simply open `index.html` in your browser
-   - Or use a local server: `python -m http.server 8000`
+3. **Start Local Development Server**
+   
+   **Option 1: Using the provided script (Easiest)**
+   ```bash
+   ./start-server.sh
+   ```
+   Then open http://localhost:8000 in your browser
+   
+   **Option 2: Using Python directly**
+   ```bash
+   python3 -m http.server 8000
+   ```
+   Then open http://localhost:8000 in your browser
+   
+   **Option 3: Using Node.js (if installed)**
+   ```bash
+   npx http-server -p 8000
+   ```
+   Then open http://localhost:8000 in your browser
+   
+   **Option 4: VS Code Live Server**
+   - Install the "Live Server" extension in VS Code
+   - Right-click on `index.html` and select "Open with Live Server"
 
 ## 🌐 Deployment
 
