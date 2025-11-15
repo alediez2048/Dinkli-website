@@ -22,9 +22,9 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(0, 255, 0, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 50% 20%, rgba(0, 255, 0, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 20%, rgba(255, 0, 0, 0.08) 0%, transparent 50%);
   animation: gradientShift 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -207,8 +207,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 30% 40%, rgba(0, 255, 0, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(0, 255, 0, 0.1) 0%, transparent 60%);
+    radial-gradient(circle at 30% 40%, rgba(255, 0, 0, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(255, 0, 0, 0.1) 0%, transparent 60%);
   animation: gradientShift 6s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -284,9 +284,9 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(0, 255, 0, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 50% 20%, rgba(0, 255, 0, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 20%, rgba(255, 0, 0, 0.08) 0%, transparent 50%);
   animation: gradientShift 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -346,8 +346,8 @@
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 25% 25%, rgba(0, 255, 0, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(0, 255, 0, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(255, 0, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 0, 0, 0.05) 0%, transparent 50%);
   animation: featureBackground 15s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -383,8 +383,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 30% 40%, rgba(0, 255, 0, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(0, 255, 0, 0.1) 0%, transparent 60%);
+    radial-gradient(circle at 30% 40%, rgba(255, 0, 0, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(255, 0, 0, 0.1) 0%, transparent 60%);
   animation: gradientShift 6s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -458,7 +458,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
   animation: pricingSweep 5s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -554,8 +554,8 @@
   background-position: 0% 0%, 100% 100%;
   background-color: transparent;
   background-image: 
-    linear-gradient(135deg, rgba(0, 255, 0, 0.03) 0%, transparent 50%),
-    linear-gradient(-135deg, rgba(0, 255, 0, 0.03) 0%, transparent 50%);
+    linear-gradient(135deg, rgba(255, 0, 0, 0.03) 0%, transparent 50%),
+    linear-gradient(-135deg, rgba(255, 0, 0, 0.03) 0%, transparent 50%);
   animation: locationPattern 12s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -597,8 +597,8 @@
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
-    linear-gradient(-135deg, rgba(0, 255, 0, 0.08) 0%, transparent 50%);
+    linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(-135deg, rgba(255, 0, 0, 0.08) 0%, transparent 50%);
   pointer-events: none;
   z-index: 2;
   mix-blend-mode: overlay;
@@ -645,8 +645,8 @@
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(90deg, transparent 0%, rgba(0, 255, 0, 0.02) 50%, transparent 100%),
-    linear-gradient(0deg, transparent 0%, rgba(0, 255, 0, 0.02) 50%, transparent 100%);
+    linear-gradient(90deg, transparent 0%, rgba(255, 0, 0, 0.02) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(255, 0, 0, 0.02) 50%, transparent 100%);
   background-size: 100px 100px, 100px 100px;
   animation: faqGrid 10s linear infinite;
   pointer-events: none;
