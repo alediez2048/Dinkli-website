@@ -786,6 +786,57 @@
 }
 
 /* Contact Form */
+/* Waitlist Form */
+.waitlist-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.waitlist-form input {
+  flex: 1;
+  padding: var(--spacing-md);
+  border: 2px solid var(--black);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: var(--font-family);
+  background: var(--white);
+  transition: all 0.2s ease;
+}
+
+.waitlist-form input:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  box-shadow: 4px 4px 0 0 var(--green-primary);
+  transform: translate(-2px, -2px);
+}
+
+.waitlist-form input::placeholder {
+  color: var(--text-secondary);
+}
+
+.waitlist-form .input-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .waitlist-form .input-group {
+    flex-direction: column;
+  }
+}
+
+#waitlist-message {
+  margin-top: var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--black);
+  display: none;
+}
+
+#waitlist-message.show {
+  display: block;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
