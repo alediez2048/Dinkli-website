@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dinkli - Find and join pickleball games anywhere. We bring the courts, paddles, balls, you bring the game. Guaranteed pickleball playtime, skill-based matching, and equipment provided. Download the app today!">
+    <meta name="description" content="Dinkli - Find and join pickleball games anywhere. We bring the courts, paddles, balls, you bring the game. Guaranteed pickleball playtime, skill-based matching, and equipment provided. Join the waitlist for early access!">
     <meta name="keywords" content="pickleball, pickleball games, pickleball app, local pickleball, affordable pickleball">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.dinkli.com">
     <meta property="og:title" content="Dinkli - Pickleball Without All the Hassle">
-    <meta property="og:description" content="Find and join pickleball games anywhere. We bring the courts, paddles, balls, you bring the game. Guaranteed pickleball playtime, skill-based matching, and equipment provided. Download the app today!">
+    <meta property="og:description" content="Find and join pickleball games anywhere. We bring the courts, paddles, balls, you bring the game. Guaranteed pickleball playtime, skill-based matching, and equipment provided. Join the waitlist for early access!">
     <meta property="og:image" content="https://www.dinkli.com/images/app-screenshots/game-listings.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -55,17 +55,12 @@
                         Find and join pickleball games anywhere. We bring the courts, paddles, balls, you bring the game. Guaranteed pickleball playtime, skill-based matching, and equipment provided.
                     </p>
                     <div class="hero-cta">
-                        <a href="#download" class="btn">Download Free</a>
+                        <a href="#waitlist" class="btn">Join the Waitlist</a>
                         <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
                     </div>
-                    <div class="app-buttons mt-md">
-                        <a href="#" class="app-button" aria-label="Download on App Store">
-                            <span>Download on App Store</span>
-                        </a>
-                        <a href="#" class="app-button" aria-label="Get it on Google Play">
-                            <span>Get it on Google Play</span>
-                        </a>
-                    </div>
+                    <p class="mt-md" style="font-size: 0.9rem; color: var(--text-secondary);">
+                        Be among the first 100 to get early access when we launch!
+                    </p>
                 </div>
                 <div class="hero-image">
                     <img src="images/app-screenshots/game-listings.png" alt="Dinkli App - Browse Available Games">
@@ -120,8 +115,8 @@
             <div class="grid grid-4">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Download the App</h3>
-                    <p>Get Dinkli from the App Store or Google Play. It's free to download!</p>
+                    <h3 class="step-title">Join the Waitlist</h3>
+                    <p>Sign up to be among the first 100 players to get early access when we launch!</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -166,7 +161,7 @@
 
                 <!-- Row 2 -->
                 <div class="feature-card card">
-                    <img src="images/app-screenshots/Dinkli-Profile.png" alt="Profile Screen" class="feature-image">
+                    <img src="images/app-screenshots/profile.png" alt="Profile Screen" class="feature-image">
                     <h3>Manage Your Profile</h3>
                     <p>Set your skill level, manage your membership, and track your upcoming games all in one place.</p>
                 </div>
@@ -199,7 +194,7 @@
                         <li>Perfect for trying out</li>
                         <li>Access to all games</li>
                     </ul>
-                    <a href="#download" class="btn btn-secondary">Get Started</a>
+                    <a href="#waitlist" class="btn btn-secondary">Join Waitlist</a>
                 </div>
                 <div class="card pricing-card card-green">
                     <div class="pricing-badge">Best Value</div>
@@ -212,7 +207,7 @@
                         <li>Priority booking</li>
                         <li>Cancel anytime</li>
                     </ul>
-                    <a href="#download" class="btn">Get Started</a>
+                    <a href="#waitlist" class="btn">Join Waitlist</a>
                 </div>
             </div>
             <p class="text-center mt-lg">
@@ -267,21 +262,35 @@
         </div>
     </section>
 
-    <!-- Download CTA -->
-    <section class="section bg-green" id="download">
+    <!-- Waitlist CTA -->
+    <section class="section bg-green" id="waitlist">
         <div class="container text-center">
-            <h2 class="section-title">Ready to <span class="text-black">Play</span>?</h2>
-            <p class="mb-lg" style="font-size: 1.25rem; color: var(--black);">
-                Download Dinkli today and join your first game!
+            <h2 class="section-title">Join the <span class="text-black">Waitlist</span></h2>
+            <p class="mb-lg" style="font-size: 1.25rem; color: var(--black); max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                Be among the first 100 players to get early access to Dinkli. We're launching soon in Austin, Texas!
             </p>
-            <div class="app-buttons">
-                <a href="#" class="app-button" aria-label="Download on App Store">
-                    <span>Download on App Store</span>
-                </a>
-                <a href="#" class="app-button" aria-label="Get it on Google Play">
-                    <span>Get it on Google Play</span>
-                </a>
-            </div>
+            <form class="waitlist-form" id="waitlist-form">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="waitlist-name" 
+                        name="name" 
+                        placeholder="Your name" 
+                        required
+                    >
+                    <input 
+                        type="email" 
+                        id="waitlist-email" 
+                        name="email" 
+                        placeholder="Your email" 
+                        required
+                    >
+                </div>
+                <button type="submit" class="btn" style="width: 100%; font-size: 1.125rem; padding: var(--spacing-md) var(--spacing-lg);">
+                    Reserve My Spot
+                </button>
+                <p id="waitlist-message"></p>
+            </form>
         </div>
     </section>
 

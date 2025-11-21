@@ -37,6 +37,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Waitlist form handling
+const waitlistForm = document.getElementById('waitlist-form');
+if (waitlistForm) {
+    waitlistForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const name = document.getElementById('waitlist-name').value.trim();
+        const email = document.getElementById('waitlist-email').value.trim();
+        const messageEl = document.getElementById('waitlist-message');
+        
+        // Basic validation
+        if (!name || !email) {
+            messageEl.textContent = 'Please fill in all fields.';
+            messageEl.classList.add('show');
+            messageEl.style.color = 'var(--red, #ff0000)';
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            messageEl.textContent = 'Please enter a valid email address.';
+            messageEl.classList.add('show');
+            messageEl.style.color = 'var(--red, #ff0000)';
+            return;
+        }
+        
+        // In a real app, this would send to a backend/email service
+        // For now, we'll store in localStorage and show success
+        const waitlistData = {
+            name: name,
+            email: email,
+            timestamp: new Date().toISOString()
+        };
+        
+        // Get existing waitlist from localStorage
+        let waitlist = JSON.parse(localStorage.getItem('dinkli_waitlist') || '[]');
+        
+        // Check if email already exists
+        const exists = waitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
+        if (exists) {
+            messageEl.textContent = 'You\'re already on the waitlist! We\'ll notify you when we launch.';
+            messageEl.classList.add('show');
+            messageEl.style.color = 'var(--black)';
+            waitlistForm.reset();
+            return;
+        }
+        
+        // Add to waitlist
+        waitlist.push(waitlistData);
+        localStorage.setItem('dinkli_waitlist', JSON.stringify(waitlist));
+        
+        // Show success message
+        messageEl.textContent = `Thanks ${name}! You're #${waitlist.length} on the waitlist. We'll notify you when we launch!`;
+        messageEl.classList.add('show');
+        messageEl.style.color = 'var(--black)';
+        waitlistForm.reset();
+        
+        // Optional: Send to backend/email service here
+        // Example: fetch('/api/waitlist', { method: 'POST', body: JSON.stringify(waitlistData) });
+    });
+}
+
 // Contact form handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
