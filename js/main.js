@@ -127,9 +127,14 @@ if (contactForm) {
             return;
         }
         
-        // Show success message (in a real app, this would send to a backend)
-        alert('Thank you for your message! We\'ll get back to you within 24-48 hours.');
-        contactForm.reset();
+        // Create mailto link to direct email to alediez2408@gmail.com
+        const mailtoLink = `mailto:alediez2408@gmail.com?subject=${encodeURIComponent('Dinkli Contact: ' + subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Optional: Show confirmation or reset
+        // contactForm.reset();
     });
 }
 
