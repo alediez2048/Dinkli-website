@@ -138,6 +138,39 @@ if (contactForm) {
     });
 }
 
+// Delete Account form handling
+const deleteForm = document.getElementById('delete-account-form');
+if (deleteForm) {
+    deleteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('delete-email').value;
+        const reason = document.getElementById('delete-reason').value;
+        const confirm = document.getElementById('delete-confirm').checked;
+        
+        if (!confirm) {
+            alert('Please check the confirmation box to proceed.');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // Create mailto link to direct email to alediez2408@gmail.com
+        const subject = 'Dinkli Account Deletion Request';
+        const body = `Please delete my Dinkli account.\n\nAccount Email: ${email}\nReason: ${reason}\n\nI confirm that I want to permanently delete my account and all associated data.`;
+        
+        const mailtoLink = `mailto:alediez2408@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+    });
+}
+
 // Scroll animations
 const observerOptions = {
   threshold: 0.1,
@@ -236,4 +269,3 @@ function initCustomMap() {
 // Uncomment to use custom map (requires Google Maps API key in HTML)
 // document.addEventListener('DOMContentLoaded', initCustomMap);
 */
-
