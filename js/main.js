@@ -161,8 +161,8 @@ if (deleteForm) {
         }
         
         // Create mailto link to direct email to alediez2408@gmail.com
-        const subject = 'Dinkli Account Deletion Request';
-        const body = `Please delete my Dinkli account.\n\nAccount Email: ${email}\nReason: ${reason}\n\nI confirm that I want to permanently delete my account and all associated data.`;
+        const subject = 'Dinkli Account & Data Deletion Request';
+        const body = `Please delete my Dinkli account and all associated data.\n\nAccount Email: ${email}\nReason: ${reason}\n\nI confirm that I want to permanently delete my account, profile, game history, and all associated data.`;
         
         const mailtoLink = `mailto:alediez2408@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
