@@ -4,5 +4,6 @@ Allow: /privacy
 Allow: /terms
 Allow: /support
 Allow: /accessibility
+Allow: /delete-account
 
 Sitemap: https://dinkli.com/sitemap.xml
