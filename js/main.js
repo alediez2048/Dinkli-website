@@ -127,8 +127,8 @@ if (contactForm) {
             return;
         }
         
-        // Create mailto link to direct email to alediez2408@gmail.com
-        const mailtoLink = `mailto:alediez2408@gmail.com?subject=${encodeURIComponent('Dinkli Contact: ' + subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        // Create mailto link to direct email to hello@dinkli.com
+        const mailtoLink = `mailto:hello@dinkli.com?subject=${encodeURIComponent('Dinkli Contact: ' + subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
         
         // Open email client
         window.location.href = mailtoLink;
@@ -160,11 +160,11 @@ if (deleteForm) {
             return;
         }
         
-        // Create mailto link to direct email to alediez2408@gmail.com
+        // Create mailto link to direct email to hello@dinkli.com
         const subject = 'Dinkli Account & Data Deletion Request';
         const body = `Please delete my Dinkli account and all associated data.\n\nAccount Email: ${email}\nReason: ${reason}\n\nI confirm that I want to permanently delete my account, profile, game history, and all associated data.`;
         
-        const mailtoLink = `mailto:alediez2408@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:hello@dinkli.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
         // Open email client
         window.location.href = mailtoLink;
