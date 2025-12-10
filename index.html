@@ -47,12 +47,49 @@
     <link rel="stylesheet" href="css/connectors.css">
     <link rel="stylesheet" href="css/sticky.css">
     <link rel="stylesheet" href="css/interactions.css">
+    <link rel="stylesheet" href="css/modal.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Opening Game Modal -->
+    <div class="modal-overlay" id="opening-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2>🎾 Join the Ceremonial Opening Game!</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-subtitle">Be part of history! Join us for Dinkli's Ceremonial Opening Game on <strong>February 1st</strong> in Austin, Texas.</p>
+                <form class="modal-waitlist-form" id="opening-game-form">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="opening-name" 
+                            name="name" 
+                            placeholder="Your name" 
+                            required
+                        >
+                        <input 
+                            type="email" 
+                            id="opening-email" 
+                            name="email" 
+                            placeholder="Your email" 
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; font-size: 1.125rem; padding: var(--spacing-md) var(--spacing-lg);">
+                        Reserve My Spot
+                    </button>
+                    <p id="opening-message"></p>
+                </form>
+                <button class="modal-skip" id="modal-skip">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-pattern"></div>
