@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="css/sticky.css">
     <link rel="stylesheet" href="css/interactions.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/countdown.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,6 +114,33 @@
                     <p class="mt-md" style="font-size: 0.9rem; color: var(--text-secondary);">
                         Be among the first 100 to get early access when we launch!
                     </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-container">
+                        <p style="font-size: 1rem; font-weight: var(--font-bold); margin-bottom: var(--spacing-sm); text-transform: uppercase;">🎾 Ceremonial Opening Game</p>
+                        <div class="countdown-timer" id="countdown-timer">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days">00</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds">00</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: var(--spacing-sm); font-weight: var(--font-bold);">February 1st, 2025</p>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="images/app-screenshots/game-listings.png" alt="Dinkli App - Browse Available Games">
