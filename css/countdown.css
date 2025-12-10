@@ -1,8 +1,13 @@
 /* Countdown Timer */
 .countdown-container {
-  margin-top: var(--spacing-lg);
+  margin-top: 0;
   text-align: center;
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .countdown-timer {
@@ -11,15 +16,13 @@
   justify-content: center;
   align-items: center;
   gap: var(--spacing-sm);
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-xs) auto 0;
   background: var(--green-primary);
   border: var(--border-thick) solid var(--black);
   box-shadow: 6px 6px 0 var(--black);
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
   width: 100%;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 600px;
   flex-wrap: nowrap;
 }
 
