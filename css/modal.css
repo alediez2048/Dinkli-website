@@ -147,6 +147,29 @@
   color: var(--black);
 }
 
+/* Countdown Timer in Modal */
+.modal-body .countdown-container {
+  margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.modal-body .countdown-timer {
+  max-width: 100%;
+  padding: var(--spacing-md);
+  margin: 0 auto;
+}
+
+.modal-body .countdown-number {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.modal-body .countdown-label {
+  font-size: 0.65rem;
+}
+
+.modal-body .countdown-separator {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+}
+
 @media (max-width: 768px) {
   .modal-content {
     padding: var(--spacing-md);
@@ -157,3 +180,4 @@
     font-size: 1.5rem;
   }
 }
+
