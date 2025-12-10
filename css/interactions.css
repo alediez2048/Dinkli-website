@@ -1,0 +1,38 @@
+/* Micro-interactions & Polish */
+
+/* Enhanced Card Hover */
+.card, .value-prop-card, .feature-card, .pricing-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card:hover, .value-prop-card:hover, .feature-card:hover, .pricing-card:hover {
+  transform: translate(-8px, -8px) rotate(-1deg);
+  box-shadow: 16px 16px 0 var(--black);
+}
+
+/* Green Card Specifics */
+.card-green:hover {
+  box-shadow: 16px 16px 0 var(--green-primary);
+}
+
+/* Social Proof Badge */
+.social-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  border: var(--border-medium) solid var(--black);
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-weight: var(--font-bold);
+  font-size: 0.9rem;
+  box-shadow: 4px 4px 0 var(--green-primary);
+  transform: rotate(-2deg);
+  animation: badgeFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes badgeFloat {
+  from { transform: rotate(-2deg) translateY(0); }
+  to { transform: rotate(-2deg) translateY(-5px); }
+}
+
