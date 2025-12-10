@@ -200,6 +200,25 @@ function toggleMobileMenu() {
   }
 }
 
+// Mobile Sticky CTA Observer
+const heroSection = document.querySelector('.hero');
+const stickyCTA = document.querySelector('.mobile-sticky-cta');
+
+if (heroSection && stickyCTA) {
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // If hero is NOT intersecting (scrolled past), show CTA
+      if (!entry.isIntersecting) {
+        stickyCTA.classList.add('visible');
+      } else {
+        stickyCTA.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0 }); // Trigger as soon as hero leaves viewport
+
+  heroObserver.observe(heroSection);
+}
+
 // Google Maps Custom Styling (Optional - requires API key)
 // To use: Add your Google Maps API key and uncomment this code
 /*
