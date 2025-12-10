@@ -227,8 +227,8 @@ const openingGameForm = document.getElementById('opening-game-form');
 
 let modalShown = false; // Track if modal has been shown in this session
 
-// Show modal when user scrolls down (if not previously dismissed)
-function showModalOnScroll() {
+// Show modal when "How It Works" section comes into view
+function showModalOnSectionView() {
   const modalDismissed = localStorage.getItem('opening_modal_dismissed');
   
   // Don't show if already dismissed or already shown in this session
@@ -236,22 +236,35 @@ function showModalOnScroll() {
     return;
   }
   
-  // Check if user has scrolled down at least 100px
-  if (window.scrollY > 100) {
-    openingModal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    modalShown = true;
-    // Remove scroll listener after showing once
-    window.removeEventListener('scroll', showModalOnScroll);
-  }
+  openingModal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  modalShown = true;
 }
 
-// Add scroll event listener
+// Use IntersectionObserver to detect when "How It Works" section is visible
 document.addEventListener('DOMContentLoaded', function() {
-  // Wait a bit before allowing scroll trigger (let page settle)
-  setTimeout(() => {
-    window.addEventListener('scroll', showModalOnScroll, { once: false });
-  }, 1000);
+  const howItWorksSection = document.getElementById('how-it-works');
+  
+  if (howItWorksSection && openingModal) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // When section enters viewport, show modal
+        if (entry.isIntersecting && !modalShown) {
+          const modalDismissed = localStorage.getItem('opening_modal_dismissed');
+          if (!modalDismissed) {
+            // Small delay for better UX
+            setTimeout(showModalOnSectionView, 300);
+            // Stop observing after showing once
+            sectionObserver.unobserve(howItWorksSection);
+          }
+        }
+      });
+    }, { 
+      threshold: 0.3 // Trigger when 30% of section is visible
+    });
+    
+    sectionObserver.observe(howItWorksSection);
+  }
 });
 
 // Close modal handlers
