@@ -219,6 +219,112 @@ if (heroSection && stickyCTA) {
   heroObserver.observe(heroSection);
 }
 
+// Opening Game Modal
+const openingModal = document.getElementById('opening-modal');
+const modalClose = document.getElementById('modal-close');
+const modalSkip = document.getElementById('modal-skip');
+const openingGameForm = document.getElementById('opening-game-form');
+
+// Show modal on page load (if not previously dismissed)
+document.addEventListener('DOMContentLoaded', function() {
+  const modalDismissed = localStorage.getItem('opening_modal_dismissed');
+  if (!modalDismissed) {
+    setTimeout(() => {
+      if (openingModal) {
+        openingModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+    }, 500); // Small delay for better UX
+  }
+});
+
+// Close modal handlers
+function closeModal() {
+  if (openingModal) {
+    openingModal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+    localStorage.setItem('opening_modal_dismissed', 'true');
+  }
+}
+
+if (modalClose) {
+  modalClose.addEventListener('click', closeModal);
+}
+
+if (modalSkip) {
+  modalSkip.addEventListener('click', closeModal);
+}
+
+// Close on overlay click
+if (openingModal) {
+  openingModal.addEventListener('click', function(e) {
+    if (e.target === openingModal) {
+      closeModal();
+    }
+  });
+}
+
+// Opening Game Form handling
+if (openingGameForm) {
+  openingGameForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('opening-name').value.trim();
+    const email = document.getElementById('opening-email').value.trim();
+    const messageEl = document.getElementById('opening-message');
+    
+    // Basic validation
+    if (!name || !email) {
+      messageEl.textContent = 'Please fill in all fields.';
+      messageEl.classList.add('show');
+      messageEl.style.color = '#ff0000';
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      messageEl.textContent = 'Please enter a valid email address.';
+      messageEl.classList.add('show');
+      messageEl.style.color = '#ff0000';
+      return;
+    }
+    
+    // Store in localStorage
+    const openingGameData = {
+      name: name,
+      email: email,
+      event: 'Feb 1st Ceremonial Opening Game',
+      timestamp: new Date().toISOString()
+    };
+    
+    let openingWaitlist = JSON.parse(localStorage.getItem('dinkli_opening_waitlist') || '[]');
+    
+    // Check if email already exists
+    const exists = openingWaitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
+    if (exists) {
+      messageEl.textContent = 'You\'re already signed up! We\'ll see you on Feb 1st!';
+      messageEl.classList.add('show');
+      messageEl.style.color = 'var(--black)';
+      setTimeout(closeModal, 2000);
+      return;
+    }
+    
+    // Add to waitlist
+    openingWaitlist.push(openingGameData);
+    localStorage.setItem('dinkli_opening_waitlist', JSON.stringify(openingWaitlist));
+    
+    // Show success message
+    messageEl.textContent = `Thanks ${name}! You're signed up for the Feb 1st Ceremonial Opening Game! 🎾`;
+    messageEl.classList.add('show');
+    messageEl.style.color = 'var(--black)';
+    openingGameForm.reset();
+    
+    // Close modal after 2 seconds
+    setTimeout(closeModal, 2000);
+  });
+}
+
 // Google Maps Custom Styling (Optional - requires API key)
 // To use: Add your Google Maps API key and uncomment this code
 /*
