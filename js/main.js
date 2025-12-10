@@ -426,16 +426,28 @@ function initCustomMap() {
 
 // Countdown Timer for Feb 1st Ceremonial Opening Game
 function updateCountdown() {
-  const targetDate = new Date('2025-02-01T00:00:00').getTime();
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+  // Set target date to February 1st, 2026 at midnight (local time)
+  // Create date in local timezone to avoid UTC issues
+  const targetDate = new Date(2026, 1, 1, 0, 0, 0, 0); // Month is 0-indexed, so 1 = February
+  const now = new Date();
+  const distance = targetDate.getTime() - now.getTime();
+  
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+  
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+    console.log('Countdown elements not found');
+    return; // Elements not found yet
+  }
   
   if (distance < 0) {
-    // If the date has passed, show zeros or a message
-    document.getElementById('days').textContent = '00';
-    document.getElementById('hours').textContent = '00';
-    document.getElementById('minutes').textContent = '00';
-    document.getElementById('seconds').textContent = '00';
+    // If the date has passed, show zeros
+    daysEl.textContent = '00';
+    hoursEl.textContent = '00';
+    minutesEl.textContent = '00';
+    secondsEl.textContent = '00';
     return;
   }
   
@@ -444,17 +456,19 @@ function updateCountdown() {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
-  document.getElementById('days').textContent = String(days).padStart(2, '0');
-  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  daysEl.textContent = String(days).padStart(2, '0');
+  hoursEl.textContent = String(hours).padStart(2, '0');
+  minutesEl.textContent = String(minutes).padStart(2, '0');
+  secondsEl.textContent = String(seconds).padStart(2, '0');
 }
 
 // Initialize countdown and update every second
 document.addEventListener('DOMContentLoaded', function() {
   const countdownTimer = document.getElementById('countdown-timer');
   if (countdownTimer) {
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Run immediately
+    setInterval(updateCountdown, 1000); // Update every second
+  } else {
+    console.log('Countdown timer element not found');
   }
 });
