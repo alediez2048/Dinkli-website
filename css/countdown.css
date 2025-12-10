@@ -3,73 +3,76 @@
   margin-top: var(--spacing-lg);
   text-align: center;
   padding: var(--spacing-md);
-  background: var(--white);
-  border: var(--border-thick) solid var(--black);
-  box-shadow: 6px 6px 0 var(--green-primary);
 }
 
 .countdown-timer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 0;
   margin: var(--spacing-md) 0;
-  flex-wrap: wrap;
+  background: var(--green-primary);
+  border: var(--border-thick) solid var(--black);
+  box-shadow: 6px 6px 0 var(--black);
+  padding: var(--spacing-md) var(--spacing-lg);
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .countdown-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70px;
+  flex: 1;
+  min-width: 0;
 }
 
 .countdown-number {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: var(--font-bold);
   font-family: var(--font-heading);
   color: var(--black);
-  background: var(--green-primary);
-  border: var(--border-thick) solid var(--black);
-  padding: var(--spacing-sm) var(--spacing-md);
-  min-width: 70px;
   text-align: center;
-  box-shadow: 4px 4px 0 var(--black);
-  line-height: 1;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xs);
 }
 
 .countdown-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: var(--font-bold);
   text-transform: uppercase;
-  margin-top: var(--spacing-xs);
-  color: var(--gray-dark);
-  letter-spacing: 1px;
+  color: var(--black);
+  letter-spacing: 0.5px;
+  opacity: 0.8;
 }
 
 .countdown-separator {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: var(--font-bold);
-  color: var(--green-primary);
+  color: var(--black);
   margin: 0 var(--spacing-xs);
   line-height: 1;
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
   .countdown-timer {
-    gap: var(--spacing-xs);
-  }
-  
-  .countdown-item {
-    min-width: 60px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: 0;
   }
   
   .countdown-number {
-    min-width: 60px;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  .countdown-label {
+    font-size: 0.65rem;
   }
   
   .countdown-separator {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     margin: 0 0.25rem;
   }
 }
