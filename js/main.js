@@ -40,7 +40,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Waitlist form handling
 const waitlistForm = document.getElementById('waitlist-form');
 if (waitlistForm) {
-    waitlistForm.addEventListener('submit', function(e) {
+    waitlistForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Get form data
@@ -65,39 +65,60 @@ if (waitlistForm) {
             return;
         }
         
-        // In a real app, this would send to a backend/email service
-        // For now, we'll store in localStorage and show success
-        const waitlistData = {
-            name: name,
-            email: email,
-            timestamp: new Date().toISOString()
-        };
-        
-        // Get existing waitlist from localStorage
-        let waitlist = JSON.parse(localStorage.getItem('dinkli_waitlist') || '[]');
-        
-        // Check if email already exists
-        const exists = waitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
-        if (exists) {
-            messageEl.textContent = 'You\'re already on the waitlist! We\'ll notify you when we launch.';
-            messageEl.classList.add('show');
-            messageEl.style.color = 'var(--black)';
-            waitlistForm.reset();
-            return;
-        }
-        
-        // Add to waitlist
-        waitlist.push(waitlistData);
-        localStorage.setItem('dinkli_waitlist', JSON.stringify(waitlist));
-        
-        // Show success message
-        messageEl.textContent = `Thanks ${name}! You're #${waitlist.length} on the waitlist. We'll notify you when we launch!`;
+        // Show loading state
+        messageEl.textContent = 'Submitting...';
         messageEl.classList.add('show');
         messageEl.style.color = 'var(--black)';
-        waitlistForm.reset();
         
-        // Optional: Send to backend/email service here
-        // Example: fetch('/api/waitlist', { method: 'POST', body: JSON.stringify(waitlistData) });
+        // Prepare data for Formspree
+        const formData = {
+            name: name,
+            email: email,
+            form_type: 'waitlist',
+            timestamp: new Date().toISOString(),
+            _subject: 'New Dinkli Waitlist Signup'
+        };
+        
+        try {
+            // Submit to Formspree
+            const response = await fetch('https://formspree.io/f/xldqpalz', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            if (response.ok) {
+                // Store in localStorage as backup
+                const waitlistData = {
+                    name: name,
+                    email: email,
+                    timestamp: new Date().toISOString()
+                };
+                
+                let waitlist = JSON.parse(localStorage.getItem('dinkli_waitlist') || '[]');
+                const exists = waitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
+                
+                if (!exists) {
+                    waitlist.push(waitlistData);
+                    localStorage.setItem('dinkli_waitlist', JSON.stringify(waitlist));
+                }
+                
+                // Show success message
+                messageEl.textContent = `Thanks ${name}! You're on the waitlist. We'll notify you when we launch!`;
+                messageEl.classList.add('show');
+                messageEl.style.color = 'var(--black)';
+                waitlistForm.reset();
+            } else {
+                throw new Error('Submission failed');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            messageEl.textContent = 'There was an error. Please try again or contact us directly.';
+            messageEl.classList.add('show');
+            messageEl.style.color = 'var(--red, #ff0000)';
+        }
     });
 }
 
@@ -295,7 +316,7 @@ if (openingModal) {
 
 // Opening Game Form handling
 if (openingGameForm) {
-  openingGameForm.addEventListener('submit', function(e) {
+  openingGameForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const name = document.getElementById('opening-name').value.trim();
@@ -319,38 +340,65 @@ if (openingGameForm) {
       return;
     }
     
-    // Store in localStorage
-    const openingGameData = {
-      name: name,
-      email: email,
-      event: 'Feb 1st Ceremonial Opening Game',
-      timestamp: new Date().toISOString()
-    };
-    
-    let openingWaitlist = JSON.parse(localStorage.getItem('dinkli_opening_waitlist') || '[]');
-    
-    // Check if email already exists
-    const exists = openingWaitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
-    if (exists) {
-      messageEl.textContent = 'You\'re already signed up! We\'ll see you on Feb 1st!';
-      messageEl.classList.add('show');
-      messageEl.style.color = 'var(--black)';
-      setTimeout(closeModal, 2000);
-      return;
-    }
-    
-    // Add to waitlist
-    openingWaitlist.push(openingGameData);
-    localStorage.setItem('dinkli_opening_waitlist', JSON.stringify(openingWaitlist));
-    
-    // Show success message
-    messageEl.textContent = `Thanks ${name}! You're signed up for the Feb 1st Ceremonial Opening Game! 🎾`;
+    // Show loading state
+    messageEl.textContent = 'Submitting...';
     messageEl.classList.add('show');
     messageEl.style.color = 'var(--black)';
-    openingGameForm.reset();
     
-    // Close modal after 2 seconds
-    setTimeout(closeModal, 2000);
+    // Prepare data for Formspree
+    const formData = {
+      name: name,
+      email: email,
+      form_type: 'opening_game',
+      event: 'Feb 1st Ceremonial Opening Game',
+      timestamp: new Date().toISOString(),
+      _subject: 'New Opening Game Signup - Feb 1st'
+    };
+    
+    try {
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xldqpalz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        // Store in localStorage as backup
+        const openingGameData = {
+          name: name,
+          email: email,
+          event: 'Feb 1st Ceremonial Opening Game',
+          timestamp: new Date().toISOString()
+        };
+        
+        let openingWaitlist = JSON.parse(localStorage.getItem('dinkli_opening_waitlist') || '[]');
+        const exists = openingWaitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
+        
+        if (!exists) {
+          openingWaitlist.push(openingGameData);
+          localStorage.setItem('dinkli_opening_waitlist', JSON.stringify(openingWaitlist));
+        }
+        
+        // Show success message
+        messageEl.textContent = `Thanks ${name}! You're signed up for the Feb 1st Ceremonial Opening Game! 🎾`;
+        messageEl.classList.add('show');
+        messageEl.style.color = 'var(--black)';
+        openingGameForm.reset();
+        
+        // Close modal after 2 seconds
+        setTimeout(closeModal, 2000);
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      messageEl.textContent = 'There was an error. Please try again or contact us directly.';
+      messageEl.classList.add('show');
+      messageEl.style.color = '#ff0000';
+    }
   });
 }
 
