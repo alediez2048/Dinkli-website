@@ -225,17 +225,33 @@ const modalClose = document.getElementById('modal-close');
 const modalSkip = document.getElementById('modal-skip');
 const openingGameForm = document.getElementById('opening-game-form');
 
-// Show modal on page load (if not previously dismissed)
-document.addEventListener('DOMContentLoaded', function() {
+let modalShown = false; // Track if modal has been shown in this session
+
+// Show modal when user scrolls down (if not previously dismissed)
+function showModalOnScroll() {
   const modalDismissed = localStorage.getItem('opening_modal_dismissed');
-  if (!modalDismissed) {
-    setTimeout(() => {
-      if (openingModal) {
-        openingModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-      }
-    }, 500); // Small delay for better UX
+  
+  // Don't show if already dismissed or already shown in this session
+  if (modalDismissed || modalShown || !openingModal) {
+    return;
   }
+  
+  // Check if user has scrolled down at least 100px
+  if (window.scrollY > 100) {
+    openingModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    modalShown = true;
+    // Remove scroll listener after showing once
+    window.removeEventListener('scroll', showModalOnScroll);
+  }
+}
+
+// Add scroll event listener
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait a bit before allowing scroll trigger (let page settle)
+  setTimeout(() => {
+    window.addEventListener('scroll', showModalOnScroll, { once: false });
+  }, 1000);
 });
 
 // Close modal handlers
