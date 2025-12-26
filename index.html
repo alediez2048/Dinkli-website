@@ -37,95 +37,12 @@
     <link rel="shortcut icon" href="images/icons/favicon-512 copy.png">
     
     <!-- Stylesheets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/marquee.css">
-    <link rel="stylesheet" href="css/hero-enhance.css">
-    <link rel="stylesheet" href="css/connectors.css">
-    <link rel="stylesheet" href="css/sticky.css">
-    <link rel="stylesheet" href="css/interactions.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/countdown.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Opening Game Modal -->
-    <div class="modal-overlay" id="opening-modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header">
-                <h2>🎾 Join the Ceremonial Opening Game!</h2>
-            </div>
-            <div class="modal-body">
-                <p class="modal-subtitle">Be part of history! Join us for Dinkli's Ceremonial Opening Game on <strong>February 1st, 2026</strong> in Austin, Texas.</p>
-                <!-- Countdown Timer -->
-                <div class="countdown-container">
-                    <div class="countdown-timer" id="countdown-timer">
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="days">00</div>
-                            <div class="countdown-label">Days</div>
-                        </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="hours">00</div>
-                            <div class="countdown-label">Hours</div>
-                        </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="minutes">00</div>
-                            <div class="countdown-label">Minutes</div>
-                        </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <div class="countdown-number" id="seconds">00</div>
-                            <div class="countdown-label">Seconds</div>
-                        </div>
-                    </div>
-                </div>
-                <form class="modal-waitlist-form" id="opening-game-form">
-                    <div class="input-group">
-                        <input 
-                            type="text" 
-                            id="opening-name" 
-                            name="name" 
-                            placeholder="Your name" 
-                            required
-                        >
-                        <input 
-                            type="email" 
-                            id="opening-email" 
-                            name="email" 
-                            placeholder="Your email" 
-                            required
-                        >
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%; font-size: 1.125rem; padding: var(--spacing-md) var(--spacing-lg);">
-                        Reserve My Spot
-                    </button>
-                    <p id="opening-message"></p>
-                </form>
-                <button class="modal-skip" id="modal-skip">Maybe Later</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-pattern"></div>
-        <div class="hero-sticker sticker-1">
-            <div class="pickleball-icon"></div>
-        </div>
-        <div class="hero-sticker sticker-2">⚡️</div>
-        <div class="hero-sticker sticker-7">
-            <div class="pickleball-icon"></div>
-        </div>
-        <div class="hero-sticker sticker-8">⚡️</div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -141,7 +58,7 @@
                         <a href="#waitlist" class="btn">Join the Waitlist</a>
                         <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0;">
+                    <p class="mt-md" style="font-size: 0.9rem; color: var(--text-secondary);">
                         Be among the first 100 to get early access when we launch!
                     </p>
                 </div>
@@ -152,34 +69,8 @@
         </div>
     </section>
 
-    <!-- Marquee -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span class="marquee-item">PICKLEBALL MADE EASY</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">AUSTIN TEXAS</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">GUARANTEED PLAYTIME</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">SKILL MATCHING</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">PICKLEBALL MADE EASY</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">AUSTIN TEXAS</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">GUARANTEED PLAYTIME</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">SKILL MATCHING</span>
-            <span class="marquee-item">•</span>
-        </div>
-    </div>
-
     <!-- Value Propositions -->
     <section class="section value-props" id="value-props">
-        <div class="hero-sticker sticker-9">
-            <div class="pickleball-icon"></div>
-        </div>
-        <div class="hero-sticker sticker-10">⚡️</div>
         <div class="container">
             <h2 class="section-title">Why Choose <span class="text-green">Dinkli</span>?</h2>
             <div class="grid grid-3">
@@ -204,9 +95,7 @@
                     <p>Games organized on outdoor public courts - basketball courts, football fields, any concrete surface works!</p>
                 </div>
                 <div class="card value-prop-card">
-                    <div class="value-prop-icon">
-                        <div class="pickleball-icon"></div>
-                    </div>
+                    <div class="value-prop-icon">🎾</div>
                     <h3 class="value-prop-title">Equipment Provided</h3>
                     <p>Game captains bring nets, rackets, and balls. Just show up and play!</p>
                 </div>
@@ -221,10 +110,6 @@
 
     <!-- How It Works -->
     <section class="section how-it-works" id="how-it-works">
-        <div class="hero-sticker sticker-11">⚡️</div>
-        <div class="hero-sticker sticker-12">
-            <div class="pickleball-icon"></div>
-        </div>
         <div class="container">
             <h2 class="section-title">How It <span class="text-green">Works</span></h2>
             <div class="grid grid-4">
@@ -249,24 +134,11 @@
                     <p>Reserve your spot, pay $10 per game or use your $50/month membership, and show up to play!</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: var(--spacing-xl);">
-                <a href="user-guide/" class="btn btn-secondary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">
-                    📖 View Complete User Guide
-                </a>
-            </div>
         </div>
     </section>
 
     <!-- Features Showcase -->
     <section class="section features" id="features">
-        <div class="hero-sticker sticker-3">⚡️</div>
-        <div class="hero-sticker sticker-4">
-            <div class="pickleball-icon"></div>
-        </div>
-        <div class="hero-sticker sticker-13">⚡️</div>
-        <div class="hero-sticker sticker-14">
-            <div class="pickleball-icon"></div>
-        </div>
         <div class="container">
             <h2 class="section-title">App <span class="text-green">Features</span></h2>
             <div class="grid grid-2">
@@ -309,14 +181,6 @@
 
     <!-- Pricing -->
     <section class="section pricing" id="pricing">
-        <div class="hero-sticker sticker-5">⚡️</div>
-        <div class="hero-sticker sticker-6">
-            <div class="pickleball-icon"></div>
-        </div>
-        <div class="hero-sticker sticker-15">⚡️</div>
-        <div class="hero-sticker sticker-16">
-            <div class="pickleball-icon"></div>
-        </div>
         <div class="container">
             <h2 class="section-title">Simple <span class="text-green">Pricing</span></h2>
             <div class="grid grid-2">
@@ -355,10 +219,6 @@
 
     <!-- FAQ -->
     <section class="section faq" id="faq">
-        <div class="hero-sticker sticker-17">⚡️</div>
-        <div class="hero-sticker sticker-18">
-            <div class="pickleball-icon"></div>
-        </div>
         <div class="container">
             <h2 class="section-title">Frequently Asked <span class="text-green">Questions</span></h2>
             <div class="faq-list">
@@ -404,10 +264,6 @@
 
     <!-- Waitlist CTA -->
     <section class="section bg-green" id="waitlist">
-        <div class="hero-sticker sticker-19">⚡️</div>
-        <div class="hero-sticker sticker-20">
-            <div class="pickleball-icon"></div>
-        </div>
         <div class="container text-center">
             <h2 class="section-title">Join the <span class="text-black">Waitlist</span></h2>
             <p class="mb-lg" style="font-size: 1.25rem; color: var(--black); max-width: 600px; margin: 0 auto var(--spacing-lg);">
@@ -440,10 +296,6 @@
 
     <!-- Location Section -->
     <section class="section location" id="location">
-        <div class="hero-sticker sticker-21">⚡️</div>
-        <div class="hero-sticker sticker-22">
-            <div class="pickleball-icon"></div>
-        </div>
         <div class="container">
             <h2 class="section-title">Currently Available in <span class="text-green">Austin, Texas</span></h2>
             <p class="text-center mb-lg" style="font-size: 1.125rem; max-width: 600px; margin: 0 auto var(--spacing-lg);">
@@ -462,28 +314,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Marquee Bottom -->
-    <div class="marquee-container reverse">
-        <div class="marquee-content">
-            <span class="marquee-item">JOIN THE COMMUNITY</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">PLAY MORE PICKLEBALL</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">NO COURT FEES</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">MEET NEW PLAYERS</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">JOIN THE COMMUNITY</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">PLAY MORE PICKLEBALL</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">NO COURT FEES</span>
-            <span class="marquee-item">•</span>
-            <span class="marquee-item">MEET NEW PLAYERS</span>
-            <span class="marquee-item">•</span>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -507,14 +337,11 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal & Support</h3>
+                <h3>Legal</h3>
                 <ul class="footer-links">
-                    <li><a href="privacy/">Privacy Policy</a></li>
-                    <li><a href="terms/">Terms of Service</a></li>
-                    <li><a href="accessibility/">Accessibility</a></li>
-                    <li><a href="support/">Support</a></li>
-                    <li><a href="user-guide/">User Guide</a></li>
-                    <li><a href="delete-account/">Delete Account</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -522,11 +349,6 @@
             <p>&copy; 2025 Dinkli. All rights reserved. ESTD 2025</p>
         </div>
     </footer>
-
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta">
-        <a href="#waitlist" class="btn" style="width: 100%;">Join Waitlist</a>
-    </div>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
