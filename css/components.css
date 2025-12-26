@@ -234,7 +234,7 @@
 
 @media (max-width: 768px) {
   .logo {
-    position: relative;
+  position: relative;
     top: auto;
     left: auto;
     margin: 0 auto var(--spacing-md);
@@ -341,128 +341,183 @@
 /* Mascot 2 - Top Left of Features Section */
 .mascot-2 {
   top: 20%;
-  left: -400px;
+  left: max(-400px, calc(-25vw));
   bottom: auto;
   right: auto;
   z-index: 10;
 }
 
 .mascot-2 img {
-  width: 338px;
+  width: 287px;
   animation: mascotFloat 4s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .mascot-2 img {
-    width: 450px;
+    width: 383px;
   }
 }
 
 @media (min-width: 1024px) {
   .mascot-2 img {
-    width: 563px;
+    width: 479px;
   }
 }
 
 @media (min-width: 1440px) {
   .mascot-2 img {
-    width: 675px;
+    width: 574px;
   }
 }
 
-/* Mascot 3 - Bottom Right of Value Props Section */
+/* Mascot 3 - Middle between Why Choose Dinkli and How It Works */
 .mascot-3 {
-  bottom: 0;
-  right: -400px;
+  bottom: -150px;
+  right: max(-400px, calc(-25vw));
   top: auto;
   left: auto;
   z-index: 10;
 }
 
 .mascot-3 img {
-  width: 338px;
+  width: 287px;
   animation: mascotFloat 4s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .mascot-3 img {
-    width: 450px;
+    width: 383px;
   }
 }
 
 @media (min-width: 1024px) {
   .mascot-3 img {
-    width: 563px;
+    width: 479px;
   }
 }
 
 @media (min-width: 1440px) {
   .mascot-3 img {
-    width: 675px;
+    width: 574px;
   }
 }
 
 /* Mascot 4 - Top Right of Pricing Section */
 .mascot-4 {
   top: 0;
-  right: -400px;
+  right: max(-400px, calc(-25vw));
   bottom: auto;
   left: auto;
   z-index: 10;
 }
 
 .mascot-4 img {
-  width: 338px;
+  width: 287px;
   animation: mascotFloat 4s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .mascot-4 img {
-    width: 450px;
+    width: 383px;
   }
 }
 
 @media (min-width: 1024px) {
   .mascot-4 img {
-    width: 563px;
+    width: 479px;
   }
 }
 
 @media (min-width: 1440px) {
   .mascot-4 img {
-    width: 675px;
+    width: 574px;
   }
 }
 
 /* Mascot 5 - Bottom Left of FAQ Section */
 .mascot-5 {
   bottom: 0;
-  left: -400px;
+  left: max(-400px, calc(-25vw));
   top: auto;
   right: auto;
   z-index: 100;
 }
 
 .mascot-5 img {
-  width: 338px;
+  width: 287px;
   animation: mascotFloat 4s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .mascot-5 img {
-    width: 450px;
+    width: 383px;
   }
 }
 
 @media (min-width: 1024px) {
   .mascot-5 img {
-    width: 563px;
+    width: 479px;
   }
 }
 
 @media (min-width: 1440px) {
   .mascot-5 img {
-    width: 675px;
+    width: 574px;
+  }
+}
+
+/* Responsive positioning for mascots 2-5 */
+@media (max-width: 1600px) {
+  .mascot-2 {
+    left: calc(-25vw);
+  }
+  
+  .mascot-3 {
+    right: calc(-25vw);
+  }
+  
+  .mascot-4 {
+    right: calc(-25vw);
+  }
+  
+  .mascot-5 {
+    left: calc(-25vw);
+  }
+}
+
+@media (max-width: 1200px) {
+  .mascot-2 {
+    left: calc(-20vw);
+  }
+  
+  .mascot-3 {
+    right: calc(-20vw);
+  }
+  
+  .mascot-4 {
+    right: calc(-20vw);
+  }
+  
+  .mascot-5 {
+    left: calc(-20vw);
+  }
+}
+
+@media (max-width: 1024px) {
+  .mascot-2 {
+    left: calc(-15vw);
+  }
+  
+  .mascot-3 {
+    right: calc(-15vw);
+  }
+  
+  .mascot-4 {
+    right: calc(-15vw);
+  }
+  
+  .mascot-5 {
+    left: calc(-15vw);
   }
 }
 
@@ -481,19 +536,19 @@
   }
   
   .mascot-2 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   .mascot-3 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   .mascot-4 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   .mascot-5 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   /* Adjust positioning for mobile visibility - keep within viewport */
@@ -532,19 +587,19 @@
   }
   
   .mascot-2 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   .mascot-3 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   .mascot-4 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   .mascot-5 img {
-    width: calc(338px * 1.3);
+    width: calc(338px * 1.3 * 0.85);
   }
   
   /* Adjust positioning for smaller mobile screens - keep within viewport */
