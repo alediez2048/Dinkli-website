@@ -1,0 +1,111 @@
+/* ============================================
+   DINKLI - Navigation Styles
+   ============================================ */
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--font-semibold);
+  font-size: 1rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--green-primary);
+  transform: translateY(-2px);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--green-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 80%;
+}
+
+.nav-cta {
+  background: var(--green-primary);
+  color: var(--black);
+  border: var(--border-thick) solid var(--black);
+  padding: var(--spacing-xs) var(--spacing-md);
+  box-shadow: 4px 4px 0 var(--black);
+  border-radius: 0;
+}
+
+.nav-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+  color: var(--black);
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .nav-links a {
+    font-size: 0.875rem;
+    padding: var(--spacing-xs);
+  }
+  
+  .nav-cta {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    padding: var(--spacing-xs) 0;
+  }
+  
+  .nav-links {
+    gap: var(--spacing-xs);
+  }
+  
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+}
+
