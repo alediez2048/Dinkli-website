@@ -11,7 +11,7 @@
   padding: var(--spacing-xl) var(--spacing-md);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero .container {
@@ -78,6 +78,12 @@
   padding: var(--spacing-md) 0;
 }
 
+@media (max-width: 768px) {
+  .hero-text {
+    padding-top: var(--spacing-xl);
+  }
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   margin-bottom: 0;
@@ -140,16 +146,29 @@
 
 /* Logo */
 .logo {
-  width: 200px;
-  height: 200px;
-  margin-bottom: var(--spacing-sm);
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0;
   border: none;
   border-radius: 50%;
   box-shadow: 8px 8px 0 var(--green-primary);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   animation: logoPulse 2s ease-in-out infinite;
-  position: relative;
+  position: fixed;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  z-index: 1000;
   align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto var(--spacing-md);
+    align-self: center;
+  }
 }
 
 .logo:hover {
@@ -163,6 +182,319 @@
   }
   50% {
     box-shadow: 12px 12px 20px var(--green-primary);
+  }
+}
+
+/* Mascot Image - Bottom Left of Hero Section */
+.mascot-image {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.mascot-1 {
+  bottom: -350px;
+  z-index: 1000;
+}
+
+.mascot-image img {
+  width: 300px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(6px 6px 0 var(--green-primary));
+  animation: mascotFloat 4s ease-in-out infinite;
+}
+
+@keyframes mascotFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+@keyframes mascotFloatCentered {
+  0%, 100% {
+    transform: translateY(-50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-10px) rotate(-3deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .mascot-image img {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mascot-image img {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mascot-image img {
+    width: 600px;
+  }
+}
+
+/* Mascot 1 - Increased by 15% */
+.mascot-1 img {
+  width: 314px;
+}
+
+@media (min-width: 768px) {
+  .mascot-1 img {
+    width: 419px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mascot-1 img {
+    width: 523px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mascot-1 img {
+    width: 628px;
+  }
+}
+
+/* Mascot 2 - Top Left of Features Section */
+.mascot-2 {
+  top: 20%;
+  left: -400px;
+  bottom: auto;
+  right: auto;
+  z-index: 10;
+}
+
+.mascot-2 img {
+  width: 314px;
+  animation: mascotFloat 4s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .mascot-2 img {
+    width: 419px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mascot-2 img {
+    width: 523px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mascot-2 img {
+    width: 628px;
+  }
+}
+
+/* Mascot 3 - Bottom Right of Value Props Section */
+.mascot-3 {
+  bottom: 0;
+  right: -400px;
+  top: auto;
+  left: auto;
+  z-index: 10;
+}
+
+.mascot-3 img {
+  width: 314px;
+  animation: mascotFloat 4s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .mascot-3 img {
+    width: 419px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mascot-3 img {
+    width: 523px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mascot-3 img {
+    width: 628px;
+  }
+}
+
+/* Mascot 4 - Top Right of Pricing Section */
+.mascot-4 {
+  top: 0;
+  right: -400px;
+  bottom: auto;
+  left: auto;
+  z-index: 10;
+}
+
+.mascot-4 img {
+  width: 314px;
+  animation: mascotFloat 4s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .mascot-4 img {
+    width: 419px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mascot-4 img {
+    width: 523px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mascot-4 img {
+    width: 628px;
+  }
+}
+
+/* Mascot 5 - Bottom Left of FAQ Section */
+.mascot-5 {
+  bottom: 0;
+  left: -400px;
+  top: auto;
+  right: auto;
+  z-index: 100;
+}
+
+.mascot-5 img {
+  width: 314px;
+  animation: mascotFloat 4s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .mascot-5 img {
+    width: 419px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mascot-5 img {
+    width: 523px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mascot-5 img {
+    width: 628px;
+  }
+}
+
+/* Mobile styles for all mascots */
+@media (max-width: 768px) {
+  .mascot-image {
+    opacity: 1;
+  }
+  
+  .mascot-image img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-1 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-2 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-3 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-4 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-5 img {
+    width: calc(314px * 1.3);
+  }
+  
+  /* Adjust positioning for mobile visibility - keep within viewport */
+  .mascot-1 {
+    left: -50px;
+  }
+  
+  .mascot-2 {
+    left: -80px;
+  }
+  
+  .mascot-3 {
+    right: -80px;
+  }
+  
+  .mascot-4 {
+    right: -80px;
+  }
+  
+  .mascot-5 {
+    left: -80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mascot-image {
+    opacity: 1;
+  }
+  
+  .mascot-image img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-1 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-2 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-3 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-4 img {
+    width: calc(314px * 1.3);
+  }
+  
+  .mascot-5 img {
+    width: calc(314px * 1.3);
+  }
+  
+  /* Adjust positioning for smaller mobile screens - keep within viewport */
+  .mascot-1 {
+    left: -30px;
+  }
+  
+  .mascot-2 {
+    left: -50px;
+  }
+  
+  .mascot-3 {
+    right: -50px;
+  }
+  
+  .mascot-4 {
+    right: -50px;
+  }
+  
+  .mascot-5 {
+    left: -50px;
   }
 }
 
@@ -198,9 +530,9 @@
 
 /* Value Props */
 .value-props {
-  background-color: rgba(255, 255, 255, 0.95);
   position: relative;
-  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.95);
+  overflow: visible;
 }
 
 /* Pattern backgrounds removed from value-props */
@@ -361,7 +693,7 @@
 .features {
   background-color: rgba(255, 255, 255, 0.95);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .features::before {
@@ -474,7 +806,7 @@
 .pricing {
   background-color: var(--gray-light);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .pricing::after {
@@ -660,7 +992,7 @@
 .faq {
   background-color: rgba(255, 255, 255, 0.95);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .faq::after {
