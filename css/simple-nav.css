@@ -1,0 +1,79 @@
+/* ============================================
+   DINKLI - Simple Navigation Styles
+   ============================================ */
+
+.simple-nav {
+  position: fixed;
+  top: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  pointer-events: none;
+}
+
+.simple-nav .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+  margin: 0;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: transparent;
+  pointer-events: auto;
+}
+
+.nav-buttons li {
+  margin: 0;
+}
+
+.nav-buttons a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--font-semibold);
+  font-size: 0.875rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.nav-buttons a:hover {
+  opacity: 1;
+  color: var(--green-primary);
+  transform: translateY(-2px);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .simple-nav {
+    top: var(--spacing-sm);
+  }
+  
+  .nav-buttons {
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs);
+  }
+  
+  .nav-buttons a {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-buttons {
+    gap: var(--spacing-xs);
+  }
+  
+  .nav-buttons a {
+    font-size: 0.7rem;
+  }
+}
+
