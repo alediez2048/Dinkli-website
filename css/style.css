@@ -76,6 +76,7 @@ html::before {
   pointer-events: none;
   z-index: 0;
   transform: translate(-2px, -2px);
+  display: none;
 }
 
 @keyframes gridMove {
