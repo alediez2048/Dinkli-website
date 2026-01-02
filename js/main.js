@@ -159,13 +159,54 @@ document.addEventListener('DOMContentLoaded', function() {
   animateElements.forEach(el => observer.observe(el));
 });
 
-// Mobile menu toggle (if needed in future)
-function toggleMobileMenu() {
-  const menu = document.querySelector('.mobile-menu');
-  if (menu) {
-    menu.classList.toggle('active');
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const menuOverlay = document.querySelector('.mobile-menu-overlay');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  if (menuToggle && menuOverlay) {
+    menuToggle.addEventListener('click', function() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menuOverlay.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (!isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close menu when clicking on a link
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu when clicking outside (on overlay background)
+    menuOverlay.addEventListener('click', function(e) {
+      if (e.target === menuOverlay) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
   }
-}
+});
 
 // Google Maps Custom Styling (Optional - requires API key)
 // To use: Add your Google Maps API key and uncomment this code
