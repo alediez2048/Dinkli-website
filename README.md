@@ -1,15 +1,15 @@
 # Dinkli Website
 
-Landing page and marketing website for Dinkli - a mobile app that helps users discover, book, and join local pickleball pickup games.
+Landing page, marketing website, and pitch deck for Dinkli - a mobile booking and player experience layer for pickleball courts.
 
 ## 🎾 About Dinkli
 
-Dinkli connects pickleball players with affordable games on public courts. Key features:
-- **Affordable**: $10 per game or $50/month membership
-- **Guaranteed Playtime**: No more waiting lists
-- **Skill Matching**: Play with players at your level
-- **Public Courts**: Games on outdoor basketball courts, football fields, or any concrete surface
-- **Equipment Provided**: Game captains bring nets, rackets, and balls
+Dinkli helps pickleball court owners and operators give their existing player communities a cleaner mobile experience. Key features:
+- **Mobile Reservations**: Book courts, open play, clinics, leagues, and recurring sessions
+- **Player Ratings**: Capture rating, skill, and no-show signals to improve session quality
+- **Memberships and Passes**: Present repeat-play options in a simple player flow
+- **Court Admin Tools**: Reduce manual scheduling, policy, cancellation, and confirmation work
+- **Player Retention**: Make it easier for players to book again and stay connected to the facility
 
 ## 🎨 Design
 
@@ -30,6 +30,7 @@ This website uses a **neurobrutalism** design style featuring:
 ```
 Dinkli/
 ├── index.html              # Main landing page
+├── pitch-deck/             # Court-operator pitch deck
 ├── css/
 │   ├── style.css          # Base styles & design system
 │   └── components.css     # Component-specific styles
