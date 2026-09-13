@@ -37,7 +37,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Waitlist form handling
+// Pilot request form handling
 const waitlistForm = document.getElementById('waitlist-form');
 if (waitlistForm) {
     waitlistForm.addEventListener('submit', function(e) {
@@ -67,37 +67,37 @@ if (waitlistForm) {
         
         // In a real app, this would send to a backend/email service
         // For now, we'll store in localStorage and show success
-        const waitlistData = {
+        const pilotRequestData = {
             name: name,
             email: email,
             timestamp: new Date().toISOString()
         };
         
-        // Get existing waitlist from localStorage
-        let waitlist = JSON.parse(localStorage.getItem('dinkli_waitlist') || '[]');
+        // Get existing pilot requests from localStorage
+        let pilotRequests = JSON.parse(localStorage.getItem('dinkli_pilot_requests') || '[]');
         
         // Check if email already exists
-        const exists = waitlist.some(entry => entry.email.toLowerCase() === email.toLowerCase());
+        const exists = pilotRequests.some(entry => entry.email.toLowerCase() === email.toLowerCase());
         if (exists) {
-            messageEl.textContent = 'You\'re already on the waitlist! We\'ll notify you when we launch.';
+            messageEl.textContent = 'We already have your pilot request. We will follow up soon.';
             messageEl.classList.add('show');
             messageEl.style.color = 'var(--black)';
             waitlistForm.reset();
             return;
         }
         
-        // Add to waitlist
-        waitlist.push(waitlistData);
-        localStorage.setItem('dinkli_waitlist', JSON.stringify(waitlist));
+        // Add to pilot request list
+        pilotRequests.push(pilotRequestData);
+        localStorage.setItem('dinkli_pilot_requests', JSON.stringify(pilotRequests));
         
         // Show success message
-        messageEl.textContent = `Thanks ${name}! You're #${waitlist.length} on the waitlist. We'll notify you when we launch!`;
+        messageEl.textContent = `Thanks ${name}! We received your court pilot request and will follow up soon.`;
         messageEl.classList.add('show');
         messageEl.style.color = 'var(--black)';
         waitlistForm.reset();
         
         // Optional: Send to backend/email service here
-        // Example: fetch('/api/waitlist', { method: 'POST', body: JSON.stringify(waitlistData) });
+        // Example: fetch('/api/pilot-requests', { method: 'POST', body: JSON.stringify(pilotRequestData) });
     });
 }
 
@@ -277,4 +277,3 @@ function initCustomMap() {
 // Uncomment to use custom map (requires Google Maps API key in HTML)
 // document.addEventListener('DOMContentLoaded', initCustomMap);
 */
-
