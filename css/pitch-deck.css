@@ -130,6 +130,8 @@
 }
 
 .slide-rail {
+  grid-column: 1;
+  grid-row: 1 / span 99;
   position: sticky;
   top: 6.5rem;
   height: calc(100vh - 8rem);
@@ -178,6 +180,7 @@
 }
 
 .deck-slide {
+  grid-column: 2;
   min-height: calc(100vh - 8rem);
   display: flex;
   flex-direction: column;
@@ -600,6 +603,8 @@
   }
 
   .slide-rail {
+    grid-column: auto;
+    grid-row: auto;
     position: static;
     height: auto;
     flex-direction: row;
@@ -608,6 +613,10 @@
 
   .slide-dot {
     min-width: fit-content;
+  }
+
+  .deck-slide {
+    grid-column: auto;
   }
 
   .hero-deck-grid,
