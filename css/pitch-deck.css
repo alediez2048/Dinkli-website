@@ -326,6 +326,10 @@
   margin-top: 1.5rem;
 }
 
+#slide-4 .insight-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .insight-card,
 .offer-card,
 .price-block,
