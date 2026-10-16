@@ -2173,6 +2173,34 @@ section[id] {
   }
 }
 
+/* Let the grid-paper page background show through every content section
+   (the green booking band, ticker, footer and cards keep their own colors). */
+.hero,
+.value-props,
+.how-it-works,
+.features,
+.game-film,
+.rating-section,
+.why-dinkli,
+.pricing,
+.faq,
+.location {
+  background: transparent;
+}
+
+.hero::before,
+.how-it-works::before,
+.pricing::after {
+  display: none;
+}
+
+/* Room for the hero mascot, which now shows through instead of being covered */
+@media (min-width: 769px) {
+  .value-props {
+    padding-top: 180px;
+  }
+}
+
 /* Shared lead-form pieces */
 .waitlist-form select {
   flex: 1;
