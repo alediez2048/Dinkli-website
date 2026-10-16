@@ -25,8 +25,8 @@ cat > "$PAGE" <<HTML
 </style></head><body>
   <div class="copy">
     <img class="logo" src="file://$REPO/images/logos/dinkli-logo.png" alt="">
-    <h1>The best booking experience in <span>pickleball.</span></h1>
-    <p>Booking platform + AI cameras, installed at your courts.</p>
+    <h1>AI-powered pickleball <span>courts.</span></h1>
+    <p>AI cameras + booking platform, installed at your courts.</p>
   </div>
   <div class="art"><img src="file://$REPO/images/photos/court-tracking.jpg" alt=""></div>
 </body></html>
