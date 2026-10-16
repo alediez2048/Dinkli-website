@@ -26,7 +26,7 @@ cat > "$PAGE" <<HTML
   <div class="copy">
     <img class="logo" src="file://$REPO/images/logos/dinkli-logo.png" alt="">
     <h1>Every game. <span>Recorded.</span> Analyzed. Rated.</h1>
-    <p>AI game film for every player, on the full-stack pickleball platform.</p>
+    <p>AI game analytics for every player, on the full-stack pickleball platform.</p>
   </div>
   <div class="art"><img src="file://$REPO/images/illustrations/court-detection.svg" alt=""></div>
 </body></html>

@@ -1,12 +1,12 @@
 # Dinkli Website
 
-Landing page, court-host page and pitch deck for Dinkli: the full-stack pickleball platform with AI game film.
+Landing page, court-host page and pitch deck for Dinkli: the full-stack pickleball platform with AI game analytics.
 
 ## 🎾 About Dinkli
 
-Dinkli is a complete booking and player platform for pickleball, and its headline feature is **AI game film**:
+Dinkli is a complete booking and player platform for pickleball, and its headline feature is **AI game analytics**:
 
-- **AI Game Film (Record & Analyze)**: a per-game add-on. Dinkli's crew brings a camera rig to the game, computer vision (YOLO object detection plus tracking) follows every player and the ball, and each player gets a personal video with timestamped coaching notes and game stats
+- **AI Game Analytics (Record & Analyze)**: a per-game add-on. Dinkli's crew brings a camera rig to the game, computer vision (YOLO object detection plus tracking) follows every player and the ball, and each player gets a personal video with timestamped coaching notes and game stats
 - **Dinkli Rating**: moves up or down after every analyzed game (Dinkli's own rating, not affiliated with DUPR)
 - **Court Booking**: courts, open play, clinics, leagues and recurring sessions
 - **Payments & Memberships**: one-time bookings, passes and memberships in one checkout
@@ -39,7 +39,7 @@ Dinkli/
 ├── contact.html, privacy-policy.html, privacy/, delete-account.html, delete-account/
 ├── css/
 │   ├── style.css           # Base styles & design tokens
-│   ├── components.css      # Component styles (incl. AI game film components)
+│   ├── components.css      # Component styles (incl. AI game analytics components)
 │   ├── marquee.css         # Ticker
 │   └── pitch-deck.css      # Deck styles
 ├── js/

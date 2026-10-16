@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" role="img" aria-labelledby="title desc">
-  <title id="title">Dinkli game film screen</title>
+  <title id="title">Dinkli game analytics screen</title>
   <desc id="desc">An example phone screen showing a recorded game with the player highlighted, a timeline with highlight markers, and a list of personal highlight clips.</desc>
   <style>
     text { font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; }
@@ -18,7 +18,7 @@
   <text x="50" y="54" font-size="15" font-weight="700" fill="#000000">9:41</text>
 
   <!-- Header -->
-  <text x="40" y="104" font-size="28" font-weight="700" fill="#000000">Game film</text>
+  <text x="40" y="104" font-size="28" font-weight="700" fill="#000000">AI Game Analytics</text>
   <text x="40" y="128" font-size="14" font-weight="500" fill="#333333">Saturday doubles · 4 players</text>
 
   <!-- Video pane -->
