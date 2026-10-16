@@ -436,6 +436,30 @@
   box-shadow: 2px 2px 0 var(--black);
 }
 
+/* Eight nav buttons: keep them clear of the fixed logo, tighten spacing,
+   and switch to the hamburger menu before they run out of room. */
+.nav-links-center {
+  max-width: none;
+  padding-left: 150px;
+  gap: 0.6rem;
+}
+
+.nav-link-btn {
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .nav-links-center {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .sticky-nav-transparent {
