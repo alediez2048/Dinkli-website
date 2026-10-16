@@ -23,120 +23,63 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Smooth scroll for anchor links
+// Smooth scroll for in-page anchor links (skips bare "#" and missing targets)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.length < 2) return;
+        const target = document.getElementById(decodeURIComponent(href.slice(1)));
+        if (!target) return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     });
 });
 
-// Pilot request form handling
-const waitlistForm = document.getElementById('waitlist-form');
-if (waitlistForm) {
-    waitlistForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const name = document.getElementById('waitlist-name').value.trim();
-        const email = document.getElementById('waitlist-email').value.trim();
-        const messageEl = document.getElementById('waitlist-message');
-        
-        // Basic validation
-        if (!name || !email) {
-            messageEl.textContent = 'Please fill in all fields.';
-            messageEl.classList.add('show');
-            messageEl.style.color = 'var(--red, #ff0000)';
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            messageEl.textContent = 'Please enter a valid email address.';
-            messageEl.classList.add('show');
-            messageEl.style.color = 'var(--red, #ff0000)';
-            return;
-        }
-        
-        // In a real app, this would send to a backend/email service
-        // For now, we'll store in localStorage and show success
-        const pilotRequestData = {
-            name: name,
-            email: email,
-            timestamp: new Date().toISOString()
-        };
-        
-        // Get existing pilot requests from localStorage
-        let pilotRequests = JSON.parse(localStorage.getItem('dinkli_pilot_requests') || '[]');
-        
-        // Check if email already exists
-        const exists = pilotRequests.some(entry => entry.email.toLowerCase() === email.toLowerCase());
-        if (exists) {
-            messageEl.textContent = 'We already have your pilot request. We will follow up soon.';
-            messageEl.classList.add('show');
-            messageEl.style.color = 'var(--black)';
-            waitlistForm.reset();
-            return;
-        }
-        
-        // Add to pilot request list
-        pilotRequests.push(pilotRequestData);
-        localStorage.setItem('dinkli_pilot_requests', JSON.stringify(pilotRequests));
-        
-        // Show success message
-        messageEl.textContent = `Thanks ${name}! We received your court pilot request and will follow up soon.`;
-        messageEl.classList.add('show');
-        messageEl.style.color = 'var(--black)';
-        waitlistForm.reset();
-        
-        // Optional: Send to backend/email service here
-        // Example: fetch('/api/pilot-requests', { method: 'POST', body: JSON.stringify(pilotRequestData) });
-    });
-}
+// Lead forms (booking, court host, contact) post to Formspree
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xldqpalz';
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+document.querySelectorAll('form[data-formspree]').forEach(form => {
+    const messageEl = form.querySelector('[data-form-message]');
+    const submitBtn = form.querySelector('[type="submit"]');
+    const successText = form.dataset.success || 'Thanks! We got your request and will be in touch soon.';
+
+    function showMessage(text, isError) {
+        if (!messageEl) return;
+        messageEl.textContent = text;
+        messageEl.classList.add('show');
+        messageEl.classList.toggle('is-error', Boolean(isError));
+    }
+
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all required fields.');
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
             return;
         }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
+
+        if (submitBtn) submitBtn.disabled = true;
+        showMessage('Sending...', false);
+
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            });
+            if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
+            form.reset();
+            showMessage(successText, false);
+        } catch (err) {
+            showMessage('Something went wrong sending your request. Please try again, or email us from the contact page.', true);
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
         }
-        
-        // Create mailto link to direct email to alediez2408@gmail.com
-        const mailtoLink = `mailto:alediez2408@gmail.com?subject=${encodeURIComponent('Dinkli Contact: ' + subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Optional: Show confirmation or reset
-        // contactForm.reset();
     });
-}
+});
 
 // Scroll animations
 const observerOptions = {
@@ -155,7 +98,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-  const animateElements = document.querySelectorAll('.card, .value-prop-card, .step, .feature-card, .pricing-card');
+  const animateElements = document.querySelectorAll('.card, .value-prop-card, .step, .feature-card, .pricing-card, .ai-shot, .rating-card, .coach-note');
   animateElements.forEach(el => observer.observe(el));
 });
 
