@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dinkli gives pickleball courts a modern mobile layer for booking, reservations, memberships, ratings, and repeat player engagement.">
-    <meta name="keywords" content="pickleball court software, pickleball booking app, pickleball reservations, pickleball court management">
-    
+    <meta name="description" content="Dinkli is the full-stack pickleball platform with AI game film. Book courts, open play, clinics and leagues, and get every game recorded, analyzed and rated.">
+    <meta name="keywords" content="pickleball video analysis, pickleball AI, pickleball game film, pickleball rating, pickleball booking app, pickleball court booking, Austin pickleball">
+    <link rel="canonical" href="https://www.dinkli.com/">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.dinkli.com/">
-    <meta property="og:title" content="Dinkli - Modern Booking for Pickleball Courts">
-    <meta property="og:description" content="A better mobile booking, reservation, rating, and membership experience for pickleball courts and their players.">
-    <meta property="og:image" content="https://www.dinkli.com/images/app-screenshots/game-listings.png">
-    <meta property="og:image:secure_url" content="https://www.dinkli.com/images/app-screenshots/game-listings.png">
+    <meta property="og:title" content="Dinkli: AI Game Film + Pickleball Booking">
+    <meta property="og:description" content="Every game. Recorded. Analyzed. Rated. Dinkli's crew brings the cameras, and every player gets a personal video, coaching notes, stats and a Dinkli Rating.">
+    <meta property="og:image" content="https://www.dinkli.com/images/og/dinkli-og.png">
+    <meta property="og:image:secure_url" content="https://www.dinkli.com/images/og/dinkli-og.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Dinkli - Pickleball court booking app">
+    <meta property="og:image:alt" content="Dinkli computer vision tracking four players and the ball on a pickleball court">
     <meta property="og:site_name" content="Dinkli">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@dinkli">
     <meta name="twitter:creator" content="@dinkli">
     <meta name="twitter:url" content="https://www.dinkli.com/">
-    <meta name="twitter:title" content="Dinkli - Modern Booking for Pickleball Courts">
-    <meta name="twitter:description" content="A better mobile booking, reservation, rating, and membership experience for pickleball courts and their players.">
-    <meta name="twitter:image" content="https://www.dinkli.com/images/app-screenshots/game-listings.png">
-    <meta name="twitter:image:alt" content="Dinkli - Pickleball court booking app">
-    
-    <title>Dinkli - Modern Booking for Pickleball Courts</title>
-    
+    <meta name="twitter:title" content="Dinkli: AI Game Film + Pickleball Booking">
+    <meta name="twitter:description" content="Every game. Recorded. Analyzed. Rated. The full-stack pickleball platform with AI game film.">
+    <meta name="twitter:image" content="https://www.dinkli.com/images/og/dinkli-og.png">
+    <meta name="twitter:image:alt" content="Dinkli computer vision tracking four players and the ball on a pickleball court">
+
+    <title>Dinkli: AI Game Film + Pickleball Booking</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-512 copy.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-512 copy.png">
@@ -39,21 +40,48 @@
     <link rel="icon" type="image/png" sizes="512x512" href="images/icons/favicon-512 copy.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/favicon-512 copy.png">
     <link rel="shortcut icon" href="images/icons/favicon-512 copy.png">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/marquee.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dinkli",
+        "url": "https://www.dinkli.com/",
+        "logo": "https://www.dinkli.com/images/logos/dinkli-logo.png",
+        "description": "The full-stack pickleball platform with AI game film: court booking, open play, clinics, leagues, memberships, and recorded games analyzed with computer vision.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Austin",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dinkli",
+        "url": "https://www.dinkli.com/"
+    }
+    </script>
 </head>
 <body>
     <!-- Sticky Navigation -->
     <nav class="sticky-nav-transparent">
         <div class="nav-links-center">
             <a href="#how-it-works" class="nav-link-btn">How It Works</a>
-            <a href="#features" class="nav-link-btn">Features</a>
-            <a href="#pricing" class="nav-link-btn">Pilot</a>
+            <a href="#game-film" class="nav-link-btn">Game Film</a>
+            <a href="#features" class="nav-link-btn">Platform</a>
+            <a href="#pricing" class="nav-link-btn">Pricing</a>
             <a href="#faq" class="nav-link-btn">FAQ</a>
-            <a href="pitch-deck/" class="nav-link-btn">Pitch Deck</a>
+            <a href="courts/" class="nav-link-btn">For Courts</a>
             <a href="contact.html" class="nav-link-btn">Contact Us</a>
         </div>
         <!-- Mobile Menu Toggle -->
@@ -66,10 +94,11 @@
         <div class="mobile-menu-overlay">
             <div class="mobile-menu-content">
                 <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
-                <a href="#features" class="mobile-nav-link">Features</a>
-                <a href="#pricing" class="mobile-nav-link">Pilot</a>
+                <a href="#game-film" class="mobile-nav-link">Game Film</a>
+                <a href="#features" class="mobile-nav-link">Platform</a>
+                <a href="#pricing" class="mobile-nav-link">Pricing</a>
                 <a href="#faq" class="mobile-nav-link">FAQ</a>
-                <a href="pitch-deck/" class="mobile-nav-link">Pitch Deck</a>
+                <a href="courts/" class="mobile-nav-link">For Courts</a>
                 <a href="contact.html" class="mobile-nav-link">Contact Us</a>
             </div>
         </div>
@@ -86,19 +115,22 @@
                 <div class="hero-text">
                     <img src="images/logos/dinkli-logo.png" alt="Dinkli Logo" class="logo">
                     <h1 class="hero-title">
-                        Modern Booking<br>
-                        <span class="text-green">For Pickleball Courts</span>
+                        Every game.<br>
+                        <span class="text-green">Recorded.</span><br>
+                        Analyzed. Rated.
                     </h1>
                     <p class="hero-subtitle">
-                        Dinkli helps private courts give players a cleaner way to book, reserve, pay, rate, and come back. Keep your court community in one mobile experience instead of forcing players through clunky tools.
+                        Dinkli is the full-stack pickleball platform. Book courts, open play, clinics and leagues, and add AI game film to any match. Our crew brings the cameras. You get your personal video, stats and Dinkli Rating.
                     </p>
                     <div class="hero-cta">
-                        <a href="pitch-deck/" class="btn">View the Court Deck</a>
-                        <a href="#waitlist" class="btn btn-secondary">Request a Pilot</a>
+                        <a href="#waitlist" class="btn">Book a Recorded Game</a>
+                        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/app-screenshots/game-listings.png" alt="Dinkli App - Browse Available Games">
+                    <figure class="ai-shot ai-shot--wide">
+                        <img src="images/illustrations/court-detection.svg" width="1600" height="1000" alt="Dinkli computer vision tracking four players and the ball during a doubles game, each outlined by a labeled detection box">
+                    </figure>
                 </div>
             </div>
         </div>
@@ -107,139 +139,227 @@
     <!-- Marquee Ticker -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span class="marquee-item">✓ Mobile Reservations</span>
-            <span class="marquee-item">✓ Player Ratings</span>
-            <span class="marquee-item">✓ No-Show Signals</span>
+            <span class="marquee-item">✓ AI Game Film</span>
+            <span class="marquee-item">✓ Court Booking</span>
+            <span class="marquee-item">✓ Player Tracking</span>
             <span class="marquee-item">✓ Memberships</span>
+            <span class="marquee-item">✓ Dinkli Rating</span>
             <span class="marquee-item">✓ Open Play</span>
-            <span class="marquee-item">✓ Clinics</span>
-            <span class="marquee-item">✓ Court Admin Tools</span>
-            <span class="marquee-item">✓ Better Player Experience</span>
+            <span class="marquee-item">✓ Coaching Notes</span>
+            <span class="marquee-item">✓ Leagues &amp; Clinics</span>
             <!-- Duplicate for seamless loop -->
-            <span class="marquee-item">✓ Mobile Reservations</span>
-            <span class="marquee-item">✓ Player Ratings</span>
-            <span class="marquee-item">✓ No-Show Signals</span>
+            <span class="marquee-item">✓ AI Game Film</span>
+            <span class="marquee-item">✓ Court Booking</span>
+            <span class="marquee-item">✓ Player Tracking</span>
             <span class="marquee-item">✓ Memberships</span>
+            <span class="marquee-item">✓ Dinkli Rating</span>
             <span class="marquee-item">✓ Open Play</span>
-            <span class="marquee-item">✓ Clinics</span>
-            <span class="marquee-item">✓ Court Admin Tools</span>
-            <span class="marquee-item">✓ Better Player Experience</span>
+            <span class="marquee-item">✓ Coaching Notes</span>
+            <span class="marquee-item">✓ Leagues &amp; Clinics</span>
         </div>
     </div>
 
-    <!-- Value Propositions -->
+    <!-- Platform Grid -->
     <section class="section value-props" id="value-props">
         <!-- Mascot Image - Bottom Right -->
         <div class="mascot-image mascot-2">
             <img src="images/logos/dinkli-active-2.png" alt="Dinkli Mascot Playing Pickleball">
         </div>
         <div class="container">
-            <h2 class="section-title">Why Courts Choose <span class="text-green">Dinkli</span></h2>
+            <h2 class="section-title">One Platform, <span class="text-green">Every Part</span> of Your Game</h2>
             <div class="grid grid-3">
+                <div class="card card-green value-prop-card feature-hero-card">
+                    <span class="feature-tag">Top feature</span>
+                    <div class="value-prop-icon">🎥</div>
+                    <h3 class="value-prop-title">AI Game Film</h3>
+                    <p>Add Record &amp; Analyze to any booking. Dinkli's crew films your game, computer vision tracks every player and the ball, and you get a personal video with coaching notes, stats and an updated Dinkli Rating.</p>
+                    <img class="feature-art" src="images/illustrations/court-detection.svg" width="1600" height="1000" loading="lazy" alt="">
+                </div>
                 <div class="card value-prop-card">
                     <div class="value-prop-icon">📱</div>
-                    <h3 class="value-prop-title">Modern Mobile Booking</h3>
-                    <p>Give players a clean way to reserve courts, open play, clinics, and recurring sessions from their phone.</p>
-                </div>
-                <div class="card value-prop-card">
-                    <div class="value-prop-icon">⭐</div>
-                    <h3 class="value-prop-title">Player Ratings</h3>
-                    <p>Use rating, skill, and no-show signals to improve game quality and protect the experience for reliable players.</p>
-                </div>
-                <div class="card value-prop-card">
-                    <div class="value-prop-icon">🎯</div>
-                    <h3 class="value-prop-title">Skill-Based Sessions</h3>
-                    <p>Help players find the right level of play while giving admins clearer control over leagues, clinics, and open play.</p>
+                    <h3 class="value-prop-title">Court Booking</h3>
+                    <p>Reserve courts, open play, clinics, leagues and recurring sessions from your phone in a few taps.</p>
                 </div>
                 <div class="card value-prop-card">
                     <div class="value-prop-icon">💳</div>
-                    <h3 class="value-prop-title">Payments and Memberships</h3>
-                    <p>Support one-time reservations, memberships, passes, clinics, and other repeat revenue streams in one flow.</p>
-                </div>
-                <div class="card value-prop-card">
-                    <div class="value-prop-icon">📣</div>
-                    <h3 class="value-prop-title">Cleaner Communication</h3>
-                    <p>Make confirmations, policies, cancellations, and updates clear before players arrive at the facility.</p>
+                    <h3 class="value-prop-title">Payments &amp; Memberships</h3>
+                    <p>Pay per game, buy a pass, or go monthly. One checkout covers bookings, memberships and add-ons.</p>
                 </div>
                 <div class="card value-prop-card">
                     <div class="value-prop-icon">📈</div>
-                    <h3 class="value-prop-title">Repeat Play</h3>
-                    <p>Turn occasional visitors into regulars by making it easier to discover the next session and book again.</p>
+                    <h3 class="value-prop-title">Dinkli Rating</h3>
+                    <p>A rating that moves up or down after every analyzed game, based on what you actually did on court.</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">🎯</div>
+                    <h3 class="value-prop-title">Skill-Matched Play</h3>
+                    <p>Find sessions at your level. No-show accountability keeps games full and reliable for everyone.</p>
+                </div>
+                <div class="card value-prop-card">
+                    <div class="value-prop-icon">🛠️</div>
+                    <h3 class="value-prop-title">Court Tools</h3>
+                    <p>Host courts get scheduling, policies, cancellations and player communication in one admin view.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
+    <!-- How the AI Works -->
     <section class="section how-it-works" id="how-it-works">
         <!-- Mascot Image - Bottom Left -->
         <div class="mascot-image mascot-3">
             <img src="images/logos/dinkli-active-3.png" alt="Dinkli Mascot Playing Pickleball">
         </div>
         <div class="container">
-            <h2 class="section-title">How It <span class="text-green">Works</span></h2>
-            <div class="grid grid-4">
+            <h2 class="section-title">How the AI <span class="text-green">Works</span></h2>
+            <div class="grid grid-5">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Map Your Court Flow</h3>
-                    <p>We learn how you handle reservations, open play, memberships, clinics, policies, and player communication.</p>
+                    <svg class="step-icon" aria-hidden="true"><use href="images/illustrations/icons.svg#i-book"/></svg>
+                    <h3 class="step-title">Book</h3>
+                    <p>Reserve your court or session and add Record &amp; Analyze at checkout.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Configure Dinkli</h3>
-                    <p>Set up courts, session types, skill levels, capacity, pricing, memberships, and cancellation rules.</p>
+                    <svg class="step-icon" aria-hidden="true"><use href="images/illustrations/icons.svg#i-rig"/></svg>
+                    <h3 class="step-title">We Set Up</h3>
+                    <p>Dinkli's crew brings and mounts the camera rig courtside. Nothing for you to carry.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Invite Players</h3>
-                    <p>Give your existing community a mobile app for booking, paying, managing reservations, and returning.</p>
+                    <svg class="step-icon" aria-hidden="true"><use href="images/illustrations/icons.svg#i-detect"/></svg>
+                    <h3 class="step-title">Detect</h3>
+                    <p>YOLO object detection finds every player, paddle and ball in every frame, and tracking follows each player through the whole game.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">Improve Operations</h3>
-                    <p>Use reservation activity, ratings, no-show signals, and repeat usage to make the court experience stronger.</p>
+                    <svg class="step-icon" aria-hidden="true"><use href="images/illustrations/icons.svg#i-analyze"/></svg>
+                    <h3 class="step-title">Analyze</h3>
+                    <p>Positioning, kitchen play, shot selection, errors and rally outcomes, broken down for each player.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <svg class="step-icon" aria-hidden="true"><use href="images/illustrations/icons.svg#i-deliver"/></svg>
+                    <h3 class="step-title">Deliver</h3>
+                    <p>Your personal video, coaching notes, stats and Dinkli Rating update land in the app.</p>
+                </div>
+            </div>
+            <div class="tech-callout">
+                <span class="tech-callout__label">Under the hood</span>
+                <p><strong>Detection.</strong> YOLO object detection identifies each player, paddle and the ball in every frame of video.</p>
+                <p><strong>Tracking.</strong> Detections are linked frame to frame, so every player is followed from the opening serve to the final point.</p>
+                <p><strong>Privacy.</strong> No audio. No face recognition. Players are matched to their tracks through their booking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Game Film -->
+    <section class="section game-film" id="game-film">
+        <div class="container">
+            <h2 class="section-title">Your <span class="text-green">Game Film</span></h2>
+            <div class="split split--phones">
+                <div class="phone-pair">
+                    <figure class="ai-shot ai-shot--phone">
+                        <img src="images/illustrations/game-film-phone.svg" width="390" height="844" loading="lazy" alt="Example Dinkli game film screen with the player highlighted on court, a timeline of highlights and a list of personal clips">
+                        <figcaption class="ai-shot__label">Example</figcaption>
+                    </figure>
+                    <figure class="ai-shot ai-shot--phone">
+                        <img src="images/illustrations/coaching-notes-phone.svg" width="390" height="844" loading="lazy" alt="Example Dinkli coaching notes screen with four timestamped tips">
+                        <figcaption class="ai-shot__label">Example</figcaption>
+                    </figure>
+                </div>
+                <div class="split-copy">
+                    <h3>A personal cut of every game you play.</h3>
+                    <p>Every player on court gets their own video: your rallies, your highlights and the moments that cost you points, with timestamped coaching notes that tell you what to work on next.</p>
+                    <div class="coach-notes" aria-label="Example coaching notes">
+                        <div class="coach-note">
+                            <span class="coach-note__time">02:14</span>
+                            <span class="coach-note__text">You're drifting back after the third shot. Hold the kitchen line.</span>
+                        </div>
+                        <div class="coach-note">
+                            <span class="coach-note__time">05:48</span>
+                            <span class="coach-note__text">Your resets are floating. Aim lower, at your opponent's feet.</span>
+                        </div>
+                        <div class="coach-note">
+                            <span class="coach-note__time">08:31</span>
+                            <span class="coach-note__text">Split-step before your opponent makes contact, not after.</span>
+                        </div>
+                    </div>
+                    <p class="fine-print">Example notes. Yours come from your own game.</p>
+                    <a href="#waitlist" class="btn">Book a Recorded Game</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Showcase -->
+    <!-- Stats & Dinkli Rating -->
+    <section class="section rating-section" id="rating">
+        <div class="container">
+            <h2 class="section-title">Stats &amp; <span class="text-green">Dinkli Rating</span></h2>
+            <div class="split">
+                <div class="split-copy">
+                    <h3>A rating that moves with your game.</h3>
+                    <p>Your Dinkli Rating moves up or down after every analyzed game. It's built from what you actually did on court, not a self-reported level, and your stats show exactly why it changed.</p>
+                    <div class="rating-card" aria-label="Example Dinkli Rating card">
+                        <div class="rating-card__header">
+                            <span class="rating-card__label">Dinkli Rating · Example</span>
+                            <span class="rating-card__value">4.12 <span class="delta delta--up">▲ 0.06</span></span>
+                        </div>
+                        <ul class="rating-card__rows">
+                            <li><span>Kitchen arrivals</span><span><strong>18</strong> <span class="delta delta--up">▲ 3</span></span></li>
+                            <li><span>Unforced errors</span><span><strong>7</strong> <span class="delta delta--down">▼ 2</span></span></li>
+                            <li><span>Third-shot drops</span><span><strong>11</strong> <span class="delta delta--up">▲ 4</span></span></li>
+                            <li><span>Rallies won</span><span><strong>24</strong> <span class="delta delta--up">▲ 5</span></span></li>
+                        </ul>
+                    </div>
+                    <p class="fine-print">The Dinkli Rating is Dinkli's own rating and isn't affiliated with DUPR.</p>
+                </div>
+                <figure class="ai-shot ai-shot--phone">
+                    <img src="images/illustrations/rating-phone.svg" width="390" height="844" loading="lazy" alt="Example Dinkli Rating screen showing the rating rising after a game, a six-game trend and this game's stats">
+                    <figcaption class="ai-shot__label">Example</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Platform -->
     <section class="section features" id="features">
         <div class="container">
-            <h2 class="section-title">Player App <span class="text-green">Features</span></h2>
+            <h2 class="section-title">Built to Run Your Whole <span class="text-green">Pickleball Life</span></h2>
+            <p class="text-center mb-lg lead-intro">Dinkli is a complete booking and player platform: courts, sessions, payments, memberships and profiles, with AI game film built in.</p>
             <div class="grid grid-2">
                 <!-- Row 1 -->
                 <div class="feature-card card">
-                    <img src="images/app-screenshots/Dinkli-Skill-Level.png" alt="Profile skill level selection screen" class="feature-image">
-                    <h3>Player Skill Profiles</h3>
-                    <p>Players set their level so operators can run better open play, clinics, leagues, and court sessions.</p>
+                    <img src="images/app-screenshots/Dinkli-Skill-Level.png" alt="Skill level selection screen" class="feature-image">
+                    <h3>Skill-Matched Play</h3>
+                    <p>Set your level and find open play, clinics and leagues that fit it.</p>
                 </div>
                 <div class="feature-card card">
-                    <img src="images/app-screenshots/game-listings.png" alt="Game Listings" class="feature-image">
-                    <h3>Browse Court Sessions</h3>
-                    <p>Players can see available sessions with times, locations, skill levels, and clear booking details.</p>
+                    <img src="images/app-screenshots/game-listings.png" alt="Session listings screen" class="feature-image">
+                    <h3>Browse Every Session</h3>
+                    <p>Courts, open play, clinics and leagues, with times, locations, levels and booking details.</p>
                 </div>
                 <div class="feature-card card">
-                    <img src="images/app-screenshots/Dinkli-Home.png" alt="Reserved Games" class="feature-image">
-                    <h3>View Reservations</h3>
-                    <p>Players can track upcoming reservations in one place, reducing confusion and front-desk follow-up.</p>
+                    <img src="images/app-screenshots/Dinkli-Home.png" alt="Upcoming reservations screen" class="feature-image">
+                    <h3>All Your Reservations</h3>
+                    <p>Upcoming games, recorded sessions and bookings, all in one place.</p>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="feature-card card">
-                    <img src="images/app-screenshots/profile-management.PNG" alt="Profile Screen" class="feature-image">
-                    <h3>Manage Player Profiles</h3>
-                    <p>Profiles, membership status, and upcoming sessions give players a home base for your court community.</p>
+                    <img src="images/app-screenshots/profile-management.PNG" alt="Player profile screen" class="feature-image">
+                    <h3>Your Player Profile</h3>
+                    <p>Membership status, game history, stats and your Dinkli Rating live on your profile.</p>
                 </div>
                 <div class="feature-card card">
                     <img src="images/app-screenshots/Dinkli-Membership.png" alt="Membership options screen showing one-time and monthly plans" class="feature-image">
-                    <h3>Choose Passes and Memberships</h3>
-                    <p>Courts can present one-time sessions, monthly memberships, and future offers in a clean mobile flow.</p>
+                    <h3>Memberships &amp; Passes</h3>
+                    <p>Pay per game, buy a pass or go monthly, all in one checkout.</p>
                 </div>
                 <div class="feature-card card">
                     <img src="images/app-screenshots/Dinkli-Booking-Confirmation.png" alt="Booking confirmation screen" class="feature-image">
-                    <h3>Booking Confirmation</h3>
-                    <p>Every reservation ends with clear timing, location, policies, and next steps so players arrive informed.</p>
+                    <h3>Clear Confirmations</h3>
+                    <p>Every booking ends with the time, court, policies and whether your game is being recorded.</p>
                 </div>
             </div>
         </div>
@@ -252,37 +372,34 @@
             <img src="images/logos/dinkli-active-4.png" alt="Dinkli Mascot Playing Pickleball">
         </div>
         <div class="container">
-            <h2 class="section-title">Founding Court <span class="text-green">Pilot</span></h2>
+            <h2 class="section-title">Simple <span class="text-green">Pricing</span></h2>
             <div class="grid grid-2">
                 <div class="card pricing-card">
-                    <h3>30-Day Booking Pilot</h3>
-                    <div class="pricing-price">1</div>
-                    <div class="pricing-period">painful workflow</div>
+                    <h3>Book</h3>
+                    <div class="pricing-price">Play</div>
+                    <div class="pricing-period">courts · open play · clinics · leagues</div>
                     <ul class="pricing-features">
-                        <li>Choose one court, league, clinic, open-play block, or recurring session</li>
-                        <li>Dinkli configures the booking, payment, confirmation, and policy flow</li>
-                        <li>Invite a focused group from your existing player community</li>
-                        <li>Measure reservations, player feedback, and admin friction</li>
+                        <li>Reserve courts and sessions from your phone</li>
+                        <li>Pay per game, buy a pass, or go monthly</li>
+                        <li>Skill-matched sessions with no-show accountability</li>
+                        <li>Your profile, history and reservations in one app</li>
                     </ul>
-                    <a href="#waitlist" class="btn btn-secondary">Request Pilot</a>
+                    <a href="#waitlist" class="btn btn-secondary">Book a Game</a>
                 </div>
                 <div class="card pricing-card card-green">
-                    <div class="pricing-badge">What You Get</div>
-                    <h3>White-Glove Setup</h3>
-                    <div class="pricing-price">Done</div>
-                    <div class="pricing-period">with your team</div>
+                    <div class="pricing-badge">Add-on</div>
+                    <h3>Record &amp; Analyze</h3>
+                    <div class="pricing-price">+ AI</div>
+                    <div class="pricing-period">added per game at checkout</div>
                     <ul class="pricing-features">
-                        <li>Court inventory and schedule configuration</li>
-                        <li>Player profiles, skill levels, ratings, and no-show signals</li>
-                        <li>Membership, pass, clinic, and event booking paths</li>
-                        <li>A pilot review before you commit to a full rollout</li>
+                        <li>Dinkli camera crew and rig at your game</li>
+                        <li>Personal game film for every player</li>
+                        <li>Timestamped coaching notes</li>
+                        <li>Game stats and a Dinkli Rating update</li>
                     </ul>
-                    <a href="#waitlist" class="btn">Talk to Dinkli</a>
+                    <a href="#waitlist" class="btn">Book a Recorded Game</a>
                 </div>
             </div>
-            <p class="text-center mt-lg">
-                <strong>Clear next step:</strong> start with one workflow, one player group, one month, and no long-term commitment.
-            </p>
         </div>
     </section>
 
@@ -296,73 +413,77 @@
             <h2 class="section-title">Frequently Asked <span class="text-green">Questions</span></h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">Is Dinkli still for players?</div>
+                    <div class="faq-question">How does the camera setup work?</div>
                     <div class="faq-answer">
-                        Yes. Players still get a simple app for booking, reservations, skill profiles, and repeat play. The new focus is serving courts that already have player demand.
+                        When you add Record &amp; Analyze to a booking, a Dinkli crew member arrives before your game, mounts the camera rig courtside and handles everything. There's nothing to install, charge or carry. When the game ends, we pack up and your footage goes to processing.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Who is Dinkli built for now?</div>
+                    <div class="faq-question">What is YOLO, in plain English?</div>
                     <div class="faq-answer">
-                        Dinkli is built for pickleball court owners, operators, program directors, and admin teams that need a cleaner mobile booking and player experience.
+                        YOLO ("You Only Look Once") is a computer vision model that looks at a frame of video and draws a box around every object it recognizes. In a Dinkli game, that means each player, paddle and the ball. We run it on every frame, then link those boxes from frame to frame to follow each player through the whole game. Our analysis turns that movement into your stats, coaching notes and Dinkli Rating.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Can Dinkli replace clunky booking tools?</div>
+                    <div class="faq-question">What about other players on court?</div>
                     <div class="faq-answer">
-                        That is the goal. Dinkli is designed around the player experience first, then gives operators the controls they need for courts, sessions, memberships, policies, and communication.
+                        Every player in a recorded game is notified when they book, and recorded courts are marked with signage. Each player gets their own cut, stats and notes. See our <a href="privacy-policy.html">Privacy Policy</a> for how game video is handled.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What can a court pilot include?</div>
+                    <div class="faq-question">Is audio recorded?</div>
                     <div class="faq-answer">
-                        A pilot can start with one court, league, clinic, open-play block, or recurring session so the operator can test real reservations with a defined player group.
+                        No. Dinkli records video only, and we don't use facial recognition. Players are matched to their tracks through their booking, not their faces.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How does Dinkli improve player quality?</div>
+                    <div class="faq-question">How fast do I get my video?</div>
                     <div class="faq-answer">
-                        Dinkli can support player skill profiles, ratings, and no-show signals so operators can reduce unreliable bookings and create better sessions.
+                        After your game is processed, the app notifies you when your video, coaching notes and stats are ready.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Does Dinkli require changing everything on day one?</div>
+                    <div class="faq-question">How does the Dinkli Rating work?</div>
                     <div class="faq-answer">
-                        No. The cleanest path is to start with one painful workflow, prove the improvement, and expand from there.
+                        Your Dinkli Rating is built from what happens in your analyzed games: positioning, shot selection, errors and rally outcomes. It moves up or down after every analyzed game, and your stats show what changed it.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is this DUPR?</div>
+                    <div class="faq-answer">
+                        No. The Dinkli Rating is Dinkli's own rating and isn't affiliated with DUPR.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I still just book a court?</div>
+                    <div class="faq-answer">
+                        Yes. Dinkli is a full booking platform for courts, open play, clinics, leagues, memberships and passes. Record &amp; Analyze is an add-on you choose game by game.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Waitlist CTA -->
+    <!-- Booking CTA -->
     <section class="section bg-green" id="waitlist">
         <div class="container text-center">
-            <h2 class="section-title">Request a <span class="text-black">Court Pilot</span></h2>
-            <p class="mb-lg" style="font-size: 1.25rem; color: var(--black); max-width: 600px; margin: 0 auto var(--spacing-lg);">
-                Tell us about your court, your current booking flow, and the player experience you want to improve.
-            </p>
-            <form class="waitlist-form" id="waitlist-form">
+            <h2 class="section-title">Book a <span class="text-black">Recorded Game</span></h2>
+            <p class="lead-intro">Tell us where you play and we'll get your next game on film.</p>
+            <form class="waitlist-form" id="booking-form" data-formspree data-success="You're in! We'll reach out to schedule your recorded game.">
+                <input type="hidden" name="source" value="player-booking">
                 <div class="input-group">
-                    <input 
-                        type="text" 
-                        id="waitlist-name" 
-                        name="name" 
-                        placeholder="Your name / court" 
-                        required
-                    >
-                    <input 
-                        type="email" 
-                        id="waitlist-email" 
-                        name="email" 
-                        placeholder="Your email" 
-                        required
-                    >
+                    <input type="text" name="name" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+                    <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Your email">
                 </div>
-                <button type="submit" class="btn" style="width: 100%; font-size: 1.125rem; padding: var(--spacing-md) var(--spacing-lg);">
-                    Request Pilot
-                </button>
-                <p id="waitlist-message"></p>
+                <div class="input-group">
+                    <input type="text" name="court_or_area" placeholder="Preferred court or area" aria-label="Preferred court or area">
+                    <select name="record_and_analyze" aria-label="Add Record and Analyze?">
+                        <option value="yes">Yes, record &amp; analyze my game</option>
+                        <option value="maybe">Maybe, tell me more</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Book a Recorded Game</button>
+                <p class="form-message" data-form-message role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>
@@ -370,18 +491,17 @@
     <!-- Location Section -->
     <section class="section location" id="location">
         <div class="container">
-            <h2 class="section-title">Piloting With <span class="text-green">Austin Courts</span></h2>
-            <p class="text-center mb-lg" style="font-size: 1.125rem; max-width: 600px; margin: 0 auto var(--spacing-lg);">
-                Dinkli is focused on court operators that already have players and want a cleaner booking experience.
-            </p>
+            <h2 class="section-title">Now Recording Games in <span class="text-green">Austin</span></h2>
+            <p class="text-center mb-lg lead-intro">Book recorded games at Dinkli host courts across Austin. Run a court? <a href="courts/">Become a host court</a>.</p>
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220444.691301565!2d-97.8227311234375!3d30.30746240771466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0cc032f%3A0x5d9b464bd469ad57!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
-                    width="100%" 
-                    height="675" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220444.691301565!2d-97.8227311234375!3d30.30746240771466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0cc032f%3A0x5d9b464bd469ad57!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    width="100%"
+                    height="675"
+                    allowfullscreen=""
+                    loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
+                    title="Map of Austin, Texas"
                     class="map-iframe">
                 </iframe>
             </div>
@@ -391,23 +511,23 @@
     <!-- Marquee Ticker -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span class="marquee-item">✓ Mobile Reservations</span>
-            <span class="marquee-item">✓ Player Ratings</span>
-            <span class="marquee-item">✓ No-Show Signals</span>
+            <span class="marquee-item">✓ AI Game Film</span>
+            <span class="marquee-item">✓ Court Booking</span>
+            <span class="marquee-item">✓ Player Tracking</span>
             <span class="marquee-item">✓ Memberships</span>
+            <span class="marquee-item">✓ Dinkli Rating</span>
             <span class="marquee-item">✓ Open Play</span>
-            <span class="marquee-item">✓ Clinics</span>
-            <span class="marquee-item">✓ Court Admin Tools</span>
-            <span class="marquee-item">✓ Better Player Experience</span>
+            <span class="marquee-item">✓ Coaching Notes</span>
+            <span class="marquee-item">✓ Leagues &amp; Clinics</span>
             <!-- Duplicate for seamless loop -->
-            <span class="marquee-item">✓ Mobile Reservations</span>
-            <span class="marquee-item">✓ Player Ratings</span>
-            <span class="marquee-item">✓ No-Show Signals</span>
+            <span class="marquee-item">✓ AI Game Film</span>
+            <span class="marquee-item">✓ Court Booking</span>
+            <span class="marquee-item">✓ Player Tracking</span>
             <span class="marquee-item">✓ Memberships</span>
+            <span class="marquee-item">✓ Dinkli Rating</span>
             <span class="marquee-item">✓ Open Play</span>
-            <span class="marquee-item">✓ Clinics</span>
-            <span class="marquee-item">✓ Court Admin Tools</span>
-            <span class="marquee-item">✓ Better Player Experience</span>
+            <span class="marquee-item">✓ Coaching Notes</span>
+            <span class="marquee-item">✓ Leagues &amp; Clinics</span>
         </div>
     </div>
 
@@ -416,7 +536,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Dinkli</h3>
-                <p>Modern mobile booking, reservations, ratings, and membership tools for pickleball courts and their players.</p>
+                <p>The full-stack pickleball platform with AI game film. Book courts, open play, clinics and leagues, and get every game recorded, analyzed and rated.</p>
                 <div class="social-links">
                     <a href="#" class="social-link" aria-label="Facebook">f</a>
                     <a href="#" class="social-link" aria-label="Instagram">ig</a>
@@ -424,25 +544,35 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3>Players</h3>
                 <ul class="footer-links">
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pilot</a></li>
+                    <li><a href="#game-film">Game Film</a></li>
+                    <li><a href="#rating">Dinkli Rating</a></li>
+                    <li><a href="#features">Platform</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="pitch-deck/">Pitch Deck</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Courts</h3>
+                <ul class="footer-links">
+                    <li><a href="courts/">For Courts</a></li>
+                    <li><a href="courts/#host-form">Become a Host Court</a></li>
+                    <li><a href="pitch-deck/">Court Deck</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul class="footer-links">
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="delete-account.html">Account Deletion</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Dinkli. All rights reserved. ESTD 2025</p>
+            <p>&copy; 2026 Dinkli. All rights reserved. ESTD 2025</p>
         </div>
     </footer>
 
@@ -450,4 +580,3 @@
     <script src="js/main.js"></script>
 </body>
 </html>
-<!-- SSL certificate trigger -->

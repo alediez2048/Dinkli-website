@@ -1634,10 +1634,67 @@
   z-index: 1;
 }
 
+/* Platform grid: fixed columns so the 2x2 AI card leaves no orphans
+   (2x2 hero + 5 cards fills a 3-column grid exactly). */
+.value-props .grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.value-props .feature-hero-card {
+  grid-row: span 2;
+}
+
+@media (max-width: 1024px) {
+  .value-props .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .value-props .feature-hero-card {
+    grid-row: auto;
+  }
+}
+
 @media (max-width: 768px) {
+  .value-props .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
   .feature-hero-card {
     grid-column: auto;
   }
+}
+
+/* Keep hero buttons clickable above the mascot, and let the How It Works
+   mascot overlap the next section instead of being cut off by it. */
+.hero .container {
+  z-index: 1001;
+}
+
+/* Decorative mascots never sit on top of copy */
+.value-props {
+  z-index: 1001;
+}
+
+.value-props .container {
+  z-index: 11;
+}
+
+.faq .container {
+  z-index: 101;
+}
+
+.feature-hero-card .feature-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--spacing-md);
+  border: var(--border-thick) solid var(--black);
+  position: relative;
+  z-index: 1;
+}
+
+.how-it-works {
+  z-index: 2;
 }
 
 /* Illustration frames */
@@ -1903,6 +1960,24 @@
 
 .tech-callout strong {
   color: var(--green-primary);
+}
+
+/* Game film + rating sections */
+.text-black {
+  color: var(--black);
+}
+
+.game-film {
+  background-color: var(--white);
+}
+
+.rating-section {
+  background-color: var(--gray-light);
+}
+
+.lead-intro a {
+  color: var(--black);
+  font-weight: var(--font-bold);
 }
 
 /* Shared lead-form pieces */
