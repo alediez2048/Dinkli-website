@@ -483,6 +483,7 @@
 
 .product-strip img {
   width: 100%;
+  height: auto;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   object-position: top;
@@ -736,12 +737,6 @@
 
 .deck-tech strong {
   color: var(--green-primary);
-}
-
-/* Show the whole screenshot rather than cropping it to the strip's 9:16 frame */
-.product-strip .full-screen img {
-  aspect-ratio: auto;
-  object-fit: contain;
 }
 
 @media (max-width: 1080px) {
