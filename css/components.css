@@ -1720,6 +1720,25 @@
   box-shadow: none;
 }
 
+/* Real app screenshots: rounded phone-screen frame */
+.ai-shot--screen {
+  max-width: 300px;
+  margin: 0 auto;
+  border: var(--border-thick) solid var(--black);
+  border-radius: 28px;
+  box-shadow: 8px 8px 0 var(--green-primary);
+}
+
+.ai-shot--screen img {
+  border-radius: 24px;
+}
+
+.ai-shot--screen .ai-shot__label {
+  top: auto;
+  bottom: -14px;
+  left: 24px;
+}
+
 .ai-shot__label {
   position: absolute;
   top: -14px;
@@ -1786,7 +1805,7 @@
   align-items: start;
 }
 
-.phone-pair .ai-shot--phone:nth-child(2) {
+.phone-pair .ai-shot:nth-child(2) {
   margin-top: var(--spacing-xl);
 }
 
@@ -1812,7 +1831,7 @@
     gap: var(--spacing-sm);
   }
 
-  .phone-pair .ai-shot--phone:nth-child(2) {
+  .phone-pair .ai-shot:nth-child(2) {
     margin-top: var(--spacing-md);
   }
 }
@@ -1967,8 +1986,11 @@
   color: var(--black);
 }
 
+/* Transparent and above How It Works, so its mascot shows through
+   without covering this section's title. */
 .game-film {
-  background-color: var(--white);
+  background-color: transparent;
+  z-index: 3;
 }
 
 .rating-section {
