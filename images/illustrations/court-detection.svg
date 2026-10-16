@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Dinkli computer vision tracking a doubles game</title>
+  <desc id="desc">A camera view of a pickleball court. Four players and the ball are each outlined by a detection box with a label, while the ball's path is traced across the net.</desc>
+  <style>
+    .label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 700; }
+    @media (prefers-reduced-motion: no-preference) {
+      .trail { animation: trail-move 1.4s linear infinite; }
+      .box-hi { animation: box-pulse 2.4s ease-in-out infinite; }
+      .box-hi.b2 { animation-delay: 0.6s; }
+      .box-hi.b3 { animation-delay: 1.2s; }
+      .box-hi.b4 { animation-delay: 1.8s; }
+      .rec-dot { animation: rec-blink 1.2s steps(2, start) infinite; }
+    }
+    @keyframes trail-move { to { stroke-dashoffset: -56; } }
+    @keyframes box-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes rec-blink { to { opacity: 0; } }
+  </style>
+  <defs>
+    <pattern id="kitchen-hatch" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="22" height="22" fill="#00FF00"/>
+      <line x1="0" y1="0" x2="0" y2="22" stroke="#000000" stroke-width="6" stroke-opacity="0.22"/>
+    </pattern>
+    <pattern id="net-mesh" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L14 14 M14 0 L0 14" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.55"/>
+    </pattern>
+    <symbol id="player" viewBox="0 0 100 200" overflow="visible">
+      <rect x="30" y="128" width="16" height="66" rx="8" fill="#000000"/>
+      <rect x="54" y="128" width="16" height="66" rx="8" fill="#000000"/>
+      <rect x="24" y="108" width="52" height="36" rx="8" fill="#000000"/>
+      <path d="M30 72 L14 100" stroke="#000000" stroke-width="11" stroke-linecap="round"/>
+      <path d="M70 72 L86 54" stroke="#000000" stroke-width="11" stroke-linecap="round"/>
+      <rect x="22" y="50" width="56" height="74" rx="24" fill="currentColor" stroke="#000000" stroke-width="5"/>
+      <circle cx="50" cy="28" r="20" fill="#F5F5F5" stroke="#000000" stroke-width="5"/>
+      <rect x="78" y="22" width="20" height="30" rx="9" fill="#FFFFFF" stroke="#000000" stroke-width="4" transform="rotate(18 88 37)"/>
+    </symbol>
+  </defs>
+
+  <!-- Surround and apron -->
+  <rect width="1600" height="1000" fill="#333333"/>
+  <polygon points="470,205 1130,205 1490,1000 110,1000" fill="#000000"/>
+
+  <!-- Court surface (perspective from an elevated courtside camera) -->
+  <polygon points="520,250 1080,250 1360,900 240,900" fill="#00FF00"/>
+  <polygon points="462.4,383.6 1137.6,383.6 1173.3,466.7 426.7,466.7" fill="url(#kitchen-hatch)"/>
+  <polygon points="426.7,466.7 1173.3,466.7 1217.6,569.4 382.4,569.4" fill="url(#kitchen-hatch)"/>
+
+  <!-- Court lines -->
+  <g fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round">
+    <polygon points="520,250 1080,250 1360,900 240,900"/>
+    <line x1="462.4" y1="383.6" x2="1137.6" y2="383.6"/>
+    <line x1="382.4" y1="569.4" x2="1217.6" y2="569.4"/>
+    <line x1="800" y1="250" x2="800" y2="383.6"/>
+    <line x1="800" y1="569.4" x2="800" y2="900"/>
+  </g>
+
+  <!-- Net -->
+  <rect x="406" y="398" width="788" height="68.7" fill="#000000" fill-opacity="0.5"/>
+  <rect x="406" y="398" width="788" height="68.7" fill="url(#net-mesh)"/>
+  <line x1="400" y1="398" x2="1200" y2="398" stroke="#FFFFFF" stroke-width="8"/>
+  <rect x="392" y="386" width="14" height="86" fill="#000000"/>
+  <rect x="1194" y="386" width="14" height="86" fill="#000000"/>
+
+  <!-- Far team -->
+  <use href="#player" x="622.5" y="172" width="75" height="150" color="#FFFFFF"/>
+  <use href="#player" x="926.5" y="211" width="79" height="158" color="#FFFFFF"/>
+
+  <!-- Ball trail and ball -->
+  <path d="M660 425 Q 735 215 840 285" fill="none" stroke="#000000" stroke-width="9" stroke-linecap="round" stroke-dasharray="16 12" class="trail"/>
+  <path d="M660 425 Q 735 215 840 285" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="16 12" class="trail"/>
+  <circle cx="840" cy="285" r="12" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+
+  <!-- Near team -->
+  <use href="#player" x="554" y="364.8" width="110" height="220" color="#333333"/>
+  <use href="#player" x="942" y="537" width="122" height="245" color="#333333"/>
+
+  <!-- Detection boxes -->
+  <g fill="none" stroke="#000000" stroke-width="10">
+    <rect x="612" y="162" width="95" height="170"/>
+    <rect x="916" y="201" width="99" height="178"/>
+    <rect x="544" y="355" width="130" height="240"/>
+    <rect x="932" y="527" width="142" height="265"/>
+    <rect x="820" y="265" width="40" height="40"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="4">
+    <rect class="box-hi" x="612" y="162" width="95" height="170"/>
+    <rect class="box-hi b2" x="916" y="201" width="99" height="178"/>
+    <rect class="box-hi b3" x="544" y="355" width="130" height="240"/>
+    <rect class="box-hi b4" x="932" y="527" width="142" height="265"/>
+    <rect x="820" y="265" width="40" height="40" stroke="#00FF00"/>
+  </g>
+
+  <!-- Detection labels -->
+  <g class="label" font-size="19">
+    <rect x="607" y="126" width="128" height="34" fill="#000000"/>
+    <text x="619" y="150" fill="#00FF00">PLAYER 1</text>
+    <rect x="911" y="165" width="128" height="34" fill="#000000"/>
+    <text x="923" y="189" fill="#00FF00">PLAYER 2</text>
+    <rect x="539" y="319" width="128" height="34" fill="#000000"/>
+    <text x="551" y="343" fill="#00FF00">PLAYER 3</text>
+    <rect x="927" y="491" width="128" height="34" fill="#000000"/>
+    <text x="939" y="515" fill="#00FF00">PLAYER 4</text>
+    <rect x="815" y="229" width="72" height="34" fill="#00FF00"/>
+    <text x="828" y="253" fill="#000000">BALL</text>
+  </g>
+
+  <!-- Camera HUD -->
+  <g class="label">
+    <rect x="40" y="36" width="160" height="56" fill="#000000" stroke="#00FF00" stroke-width="4"/>
+    <circle class="rec-dot" cx="72" cy="64" r="11" fill="#00FF00"/>
+    <text x="94" y="75" font-size="30" fill="#FFFFFF">REC</text>
+    <rect x="1376" y="36" width="184" height="56" fill="#000000"/>
+    <text x="1398" y="74" font-size="28" fill="#00FF00">CAM 01</text>
+    <rect x="0" y="928" width="1600" height="72" fill="#000000"/>
+    <line x1="0" y1="928" x2="1600" y2="928" stroke="#00FF00" stroke-width="5"/>
+    <text x="40" y="976" font-size="28" fill="#00FF00">TRACKING 4 PLAYERS · 1 BALL</text>
+    <text x="1560" y="976" font-size="28" fill="#FFFFFF" text-anchor="end">00:02:14</text>
+  </g>
+
+  <!-- Frame -->
+  <rect x="0" y="0" width="1600" height="1000" fill="none" stroke="#000000" stroke-width="12"/>
+</svg>

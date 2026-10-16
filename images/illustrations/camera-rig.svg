@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Dinkli camera rig at a court corner</title>
+  <desc id="desc">A Dinkli camera on a tripod set up at the corner of a pickleball court, with its field of view covering the court and the rig case beside it.</desc>
+  <style>
+    text { font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fov-edge { animation: fov-move 1.6s linear infinite; }
+      .rec { animation: rec-blink 1.2s steps(2, start) infinite; }
+    }
+    @keyframes fov-move { to { stroke-dashoffset: -44; } }
+    @keyframes rec-blink { to { opacity: 0; } }
+  </style>
+
+  <rect width="800" height="800" fill="#F5F5F5"/>
+
+  <defs>
+    <symbol id="mini-player" viewBox="0 0 40 80" overflow="visible">
+      <rect x="12" y="52" width="7" height="26" rx="3.5" fill="#000000"/>
+      <rect x="21" y="52" width="7" height="26" rx="3.5" fill="#000000"/>
+      <rect x="8" y="20" width="24" height="34" rx="10" fill="#FFFFFF" stroke="#000000" stroke-width="3"/>
+      <circle cx="20" cy="11" r="9" fill="#F5F5F5" stroke="#000000" stroke-width="3"/>
+      <rect x="31" y="10" width="9" height="13" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+    </symbol>
+  </defs>
+
+  <!-- Field of view (drawn under the court so the court stays bright) -->
+  <polygon points="388,152 800,290 800,800 300,800" fill="#FFFFFF"/>
+
+  <!-- Court corner -->
+  <polygon points="340,600 800,390 800,800 520,800" fill="#00FF00"/>
+  <g fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round">
+    <polyline points="800,390 340,600 520,800"/>
+    <line x1="421" y1="690" x2="800" y2="517"/>
+    <line x1="570" y1="495" x2="651" y2="585"/>
+  </g>
+  <line x1="448" y1="720" x2="800" y2="559" stroke="#FFFFFF" stroke-width="9"/>
+  <line x1="448" y1="720" x2="800" y2="559" stroke="#000000" stroke-width="3"/>
+  <rect x="442" y="690" width="12" height="40" fill="#000000"/>
+
+  <!-- Tracked players inside the field of view -->
+  <use href="#mini-player" x="470" y="540" width="40" height="80"/>
+  <use href="#mini-player" x="660" y="470" width="36" height="72"/>
+  <g fill="none" stroke="#000000" stroke-width="7">
+    <rect x="462" y="532" width="58" height="96"/>
+    <rect x="652" y="462" width="54" height="88"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3">
+    <rect x="462" y="532" width="58" height="96"/>
+    <rect x="652" y="462" width="54" height="88"/>
+  </g>
+  <g class="mono" font-size="13" font-weight="700">
+    <rect x="459" y="508" width="52" height="22" fill="#000000"/>
+    <text x="466" y="524" fill="#00FF00">P1</text>
+    <rect x="649" y="438" width="52" height="22" fill="#000000"/>
+    <text x="656" y="454" fill="#00FF00">P2</text>
+  </g>
+
+  <!-- Field of view edges -->
+  <g fill="none" stroke="#000000" stroke-width="4" stroke-dasharray="14 8" class="fov-edge">
+    <line x1="388" y1="152" x2="800" y2="290"/>
+    <line x1="388" y1="152" x2="300" y2="800"/>
+  </g>
+
+  <!-- Rig case and cable -->
+  <path d="M160 700 C 200 700 215 650 250 590" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
+  <rect x="36" y="664" width="132" height="96" fill="#000000"/>
+  <rect x="28" y="656" width="132" height="96" fill="#00FF00" stroke="#000000" stroke-width="6"/>
+  <rect x="64" y="636" width="60" height="20" fill="none" stroke="#000000" stroke-width="6"/>
+  <text x="94" y="704" font-size="24" font-weight="700" fill="#000000" text-anchor="middle">DINKLI</text>
+  <text x="94" y="730" class="mono" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">RIG 01</text>
+
+  <!-- Tripod -->
+  <g stroke="#000000" stroke-linecap="round">
+    <line x1="250" y1="210" x2="250" y2="570" stroke-width="12"/>
+    <line x1="250" y1="570" x2="176" y2="728" stroke-width="10"/>
+    <line x1="250" y1="570" x2="252" y2="748" stroke-width="10"/>
+    <line x1="250" y1="570" x2="336" y2="722" stroke-width="10"/>
+  </g>
+  <rect x="226" y="556" width="48" height="26" fill="#000000"/>
+
+  <!-- Camera head -->
+  <rect x="235" y="196" width="30" height="24" fill="#000000"/>
+  <rect x="190" y="118" width="160" height="88" fill="#000000"/>
+  <rect x="180" y="108" width="160" height="88" fill="#00FF00" stroke="#000000" stroke-width="6"/>
+  <polygon points="340,124 392,108 392,196 340,180" fill="#FFFFFF" stroke="#000000" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="366" cy="152" r="16" fill="#000000"/>
+  <circle class="rec" cx="204" cy="132" r="8" fill="#000000"/>
+  <text x="262" y="170" font-size="26" font-weight="700" fill="#000000" text-anchor="middle">DINKLI</text>
+
+  <!-- Callout -->
+  <rect x="28" y="28" width="300" height="46" fill="#000000"/>
+  <text x="44" y="58" class="mono" font-size="16" font-weight="700" fill="#00FF00">CREW-MOUNTED · NO INSTALL</text>
+
+  <rect x="0" y="0" width="800" height="800" fill="none" stroke="#000000" stroke-width="10"/>
+</svg>
