@@ -59,7 +59,8 @@
                 <!-- Contact Form -->
                 <div class="card">
                     <h2 style="margin-bottom: var(--spacing-md); color: var(--green-primary);">Send us a Message</h2>
-                    <form class="contact-form" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <form class="contact-form" data-formspree data-success="Thanks! Your message is on its way to the Dinkli team." style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <input type="hidden" name="source" value="contact">
                         <div>
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -81,6 +82,7 @@
                         </div>
                         
                         <button type="submit" class="btn" style="width: 100%; margin-top: var(--spacing-sm);">Send Message</button>
+                        <p class="form-message" data-form-message role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
