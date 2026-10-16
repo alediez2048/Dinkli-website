@@ -90,12 +90,7 @@ html::before {
 
 body {
   font-family: var(--font-body);
-  /* Same grid-paper background as the pitch deck */
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
-    #f8f8f0;
-  background-size: 36px 36px;
+  background-color: transparent;
   color: var(--black);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
