@@ -1,19 +1,19 @@
 # Dinkli Website
 
-Landing page, court-host page and pitch deck for Dinkli: the full-stack pickleball platform with AI game analytics.
+Website and pitch deck for Dinkli. We install a complete booking platform and AI cameras at pickleball courts.
 
 ## 🎾 About Dinkli
 
 Dinkli is a complete booking and player platform for pickleball, and its headline feature is **AI game analytics**:
 
-- **AI Game Analytics (Record & Analyze)**: a per-game add-on. Dinkli's crew brings a camera rig to the game, computer vision (YOLO object detection plus tracking) follows every player and the ball, and each player gets a personal video with timestamped coaching notes and game stats
+- **AI Game Analytics (Record & Analyze)**: a per-game add-on. cameras installed at the court record the game, computer vision (YOLO object detection plus tracking) follows every player and the ball, and each player gets a personal video with timestamped coaching notes and game stats
 - **Dinkli Rating**: moves up or down after every analyzed game (Dinkli's own rating, not affiliated with DUPR)
 - **Court Booking**: courts, open play, clinics, leagues and recurring sessions
 - **Payments & Memberships**: one-time bookings, passes and memberships in one checkout
 - **Skill-Matched Play**: skill levels and no-show accountability
 - **Court Tools**: scheduling, policies, cancellations and player communication for host courts
 
-Players are the audience of the homepage. Courts are hosting partners, sold through `/courts/` and the pitch deck.
+The homepage and pitch deck speak to court owners. The mission is the best booking experience in pickleball for their players. Cameras are installed permanently at each court, and players add Record & Analyze per game. `/courts/` redirects to the homepage.
 
 ## 🎨 Design
 
@@ -33,8 +33,8 @@ This website uses a **neurobrutalism** design style featuring:
 
 ```
 Dinkli/
-├── index.html              # Player homepage
-├── courts/                 # Host-court page (/courts/)
+├── index.html              # Homepage (court owners)
+├── courts/                 # Redirects to the homepage
 ├── pitch-deck/             # Court-host pitch deck (prints to 11 landscape pages)
 ├── contact.html, privacy-policy.html, privacy/, delete-account.html, delete-account/
 ├── css/
@@ -64,7 +64,7 @@ bash scripts/build_site.sh      # builds the filtered _site/ that gets deployed
 bash scripts/render_og.sh       # re-renders images/og/dinkli-og.png after changing the hero illustration
 ```
 
-Lead forms post to Formspree (`js/main.js`, `FORMSPREE_ENDPOINT`) with a hidden `source` field: `player-booking`, `court-host` or `contact`.
+Lead forms post to Formspree (`js/main.js`, `FORMSPREE_ENDPOINT`) with a hidden `source` field: `court-owner` or `contact`.
 
 Copy rule: no invented metrics, testimonials, accuracy figures, turnaround promises or "first/only" claims. `check_site.py` enforces the obvious cases.
 

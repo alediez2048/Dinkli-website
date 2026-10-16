@@ -25,10 +25,10 @@ cat > "$PAGE" <<HTML
 </style></head><body>
   <div class="copy">
     <img class="logo" src="file://$REPO/images/logos/dinkli-logo.png" alt="">
-    <h1>Every game. <span>Recorded.</span> Analyzed. Rated.</h1>
-    <p>AI game analytics for every player, on the full-stack pickleball platform.</p>
+    <h1>The best booking experience in <span>pickleball.</span></h1>
+    <p>Booking platform + AI cameras, installed at your courts.</p>
   </div>
-  <div class="art"><img src="file://$REPO/images/illustrations/court-detection.svg" alt=""></div>
+  <div class="art"><img src="file://$REPO/images/photos/court-tracking.jpg" alt=""></div>
 </body></html>
 HTML
 
