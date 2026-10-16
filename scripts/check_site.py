@@ -18,7 +18,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 SITE_URL = 'https://www.dinkli.com/'
-SKIP_DIRS = {'.git', '.github', 'docs', 'scripts', 'node_modules', '_site', 'Dinkli Screenshots'}
+SKIP_DIRS = {'.git', '.github', '.shot', 'docs', 'scripts', 'node_modules', '_site', 'Dinkli Screenshots'}
 ILLUSTRATION_DIR = os.path.join(ROOT, 'images', 'illustrations')
 SVG_MAX_BYTES = 60 * 1024
 
