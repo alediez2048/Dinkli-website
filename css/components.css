@@ -1812,6 +1812,27 @@ section[id] {
   z-index: 101;
 }
 
+.pricing .container {
+  z-index: 11;
+}
+
+/* Why Dinkli: four cards in one row, 2x2 on tablets, stacked on phones */
+.why-dinkli .grid-2 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .why-dinkli .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .why-dinkli .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .feature-hero-card .feature-art {
   display: block;
   width: 100%;
@@ -1913,6 +1934,16 @@ section[id] {
   display: block;
   margin: 0 auto var(--spacing-sm);
   color: var(--black);
+}
+
+/* How It Works: installed camera illustration beside the tech callout */
+.split--install {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  margin-top: var(--spacing-lg);
+}
+
+.split--install .tech-callout {
+  margin-top: 0;
 }
 
 /* Two-column media + copy layout */
@@ -2117,7 +2148,8 @@ section[id] {
 
 /* Transparent and above How It Works, so its mascot shows through
    without covering this section's title. */
-.game-film {
+.game-film,
+.features {
   background-color: transparent;
   z-index: 3;
 }
