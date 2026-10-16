@@ -1,15 +1,19 @@
 # Dinkli Website
 
-Landing page, marketing website, and pitch deck for Dinkli - a mobile booking and player experience layer for pickleball courts.
+Landing page, court-host page and pitch deck for Dinkli: the full-stack pickleball platform with AI game film.
 
 ## 🎾 About Dinkli
 
-Dinkli helps pickleball court owners and operators give their existing player communities a cleaner mobile experience. Key features:
-- **Mobile Reservations**: Book courts, open play, clinics, leagues, and recurring sessions
-- **Player Ratings**: Capture rating, skill, and no-show signals to improve session quality
-- **Memberships and Passes**: Present repeat-play options in a simple player flow
-- **Court Admin Tools**: Reduce manual scheduling, policy, cancellation, and confirmation work
-- **Player Retention**: Make it easier for players to book again and stay connected to the facility
+Dinkli is a complete booking and player platform for pickleball, and its headline feature is **AI game film**:
+
+- **AI Game Film (Record & Analyze)**: a per-game add-on. Dinkli's crew brings a camera rig to the game, computer vision (YOLO object detection plus tracking) follows every player and the ball, and each player gets a personal video with timestamped coaching notes and game stats
+- **Dinkli Rating**: moves up or down after every analyzed game (Dinkli's own rating, not affiliated with DUPR)
+- **Court Booking**: courts, open play, clinics, leagues and recurring sessions
+- **Payments & Memberships**: one-time bookings, passes and memberships in one checkout
+- **Skill-Matched Play**: skill levels and no-show accountability
+- **Court Tools**: scheduling, policies, cancellations and player communication for host courts
+
+Players are the audience of the homepage. Courts are hosting partners, sold through `/courts/` and the pitch deck.
 
 ## 🎨 Design
 
@@ -29,21 +33,40 @@ This website uses a **neurobrutalism** design style featuring:
 
 ```
 Dinkli/
-├── index.html              # Main landing page
-├── pitch-deck/             # Court-operator pitch deck
+├── index.html              # Player homepage
+├── courts/                 # Host-court page (/courts/)
+├── pitch-deck/             # Court-host pitch deck (prints to 11 landscape pages)
+├── contact.html, privacy-policy.html, privacy/, delete-account.html, delete-account/
 ├── css/
-│   ├── style.css          # Base styles & design system
-│   └── components.css     # Component-specific styles
+│   ├── style.css           # Base styles & design tokens
+│   ├── components.css      # Component styles (incl. AI game film components)
+│   ├── marquee.css         # Ticker
+│   └── pitch-deck.css      # Deck styles
 ├── js/
-│   └── main.js            # JavaScript functionality
+│   ├── main.js             # FAQ, nav, Formspree lead forms, scroll reveal
+│   └── pitch-deck.js       # Deck navigation and print
 ├── images/
-│   ├── logos/             # Brand logos
-│   ├── app-screenshots/   # App screenshots
-│   └── icons/             # Icons (if needed)
-├── assets/
-│   └── fonts/             # Custom fonts (if any)
-└── README.md
+│   ├── illustrations/      # Designed SVG illustrations + icons.svg sprite
+│   ├── og/                 # Social share image (rendered by scripts/render_og.sh)
+│   ├── app-screenshots/    # App screenshots
+│   └── logos/              # Logo and mascots
+├── scripts/                # build_site.sh, check_site.py, render_og.sh (not deployed)
+└── docs/                   # Plans and the illustration review page (not deployed)
 ```
+
+Note: `privacy-policy.html` / `privacy/index.html` and `delete-account.html` / `delete-account/index.html` are copies. Edit both of each pair.
+
+## ✅ Checks
+
+```bash
+python3 scripts/check_site.py   # broken links/anchors (case-sensitive), banned marketing claims, SVG budget
+bash scripts/build_site.sh      # builds the filtered _site/ that gets deployed
+bash scripts/render_og.sh       # re-renders images/og/dinkli-og.png after changing the hero illustration
+```
+
+Lead forms post to Formspree (`js/main.js`, `FORMSPREE_ENDPOINT`) with a hidden `source` field: `player-booking`, `court-host` or `contact`.
+
+Copy rule: no invented metrics, testimonials, accuracy figures, turnaround promises or "first/only" claims. `check_site.py` enforces the obvious cases.
 
 ## 🚀 Getting Started
 
@@ -88,7 +111,7 @@ This site is deployed on **GitHub Pages** and live at:
 - **Production**: https://www.dinkli.com
 - **GitHub Pages**: https://alediez2048.github.io/Dinkli-website
 
-Deployment is automatic via GitHub Actions when pushing to the `main` branch.
+Deployment is automatic via GitHub Actions when pushing to the `main` branch. The workflow runs `scripts/build_site.sh` and publishes only `_site/`, so `docs/`, `scripts/`, Markdown files and app config never go live.
 
 ## 📝 Development
 
