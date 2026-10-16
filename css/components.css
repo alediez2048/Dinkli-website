@@ -1581,7 +1581,7 @@
 }
 
 /* ============================================
-   AI Game Film components
+   AI Game Analytics components
    ============================================ */
 
 /* Five-up grid for the How It Works pipeline */
@@ -1962,7 +1962,7 @@
   color: var(--green-primary);
 }
 
-/* Game film + rating sections */
+/* Game analytics + rating sections */
 .text-black {
   color: var(--black);
 }
