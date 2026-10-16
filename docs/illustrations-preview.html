@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illustration Review</title>
+    <!-- Internal review page: docs/ is excluded from the deploy (scripts/build_site.sh). -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background: #FFFFFF; padding: 2rem; }
+        h1 { text-transform: uppercase; }
+        h2 { margin-top: 3rem; border-bottom: 4px solid #000; padding-bottom: .5rem; }
+        .row { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; }
+        .tile { border: 4px solid #000; padding: 1rem; background: #FFFFFF; }
+        .tile.gray { background: #F5F5F5; }
+        .tile p { font-family: ui-monospace, Menlo, monospace; font-size: .8rem; margin-top: .5rem; }
+        .wide-100 { width: 800px; max-width: 100%; }
+        .wide-50 { width: 400px; }
+        .phone-100 { width: 320px; }
+        .phone-50 { width: 160px; }
+        .rig-100 { width: 400px; }
+        .rig-50 { width: 200px; }
+        .icons svg { width: 64px; height: 64px; }
+        .icons-big svg { width: 128px; height: 128px; }
+    </style>
+</head>
+<body>
+    <h1>Dinkli illustration review</h1>
+    <p>Each illustration on white and on light gray, at full and half size. Toggle "Reduce motion" in macOS to confirm the animation stops.</p>
+
+    <h2>court-detection.svg</h2>
+    <div class="row">
+        <div class="tile"><img class="wide-100" src="../images/illustrations/court-detection.svg" alt=""><p>800px</p></div>
+        <div class="tile gray"><img class="wide-50" src="../images/illustrations/court-detection.svg" alt=""><p>400px</p></div>
+    </div>
+
+    <h2>Phone screens</h2>
+    <div class="row">
+        <div class="tile"><img class="phone-100" src="../images/illustrations/game-film-phone.svg" alt=""><p>game-film-phone.svg</p></div>
+        <div class="tile"><img class="phone-100" src="../images/illustrations/coaching-notes-phone.svg" alt=""><p>coaching-notes-phone.svg</p></div>
+        <div class="tile"><img class="phone-100" src="../images/illustrations/rating-phone.svg" alt=""><p>rating-phone.svg</p></div>
+    </div>
+    <div class="row" style="margin-top:2rem">
+        <div class="tile gray"><img class="phone-50" src="../images/illustrations/game-film-phone.svg" alt=""><p>50%</p></div>
+        <div class="tile gray"><img class="phone-50" src="../images/illustrations/coaching-notes-phone.svg" alt=""><p>50%</p></div>
+        <div class="tile gray"><img class="phone-50" src="../images/illustrations/rating-phone.svg" alt=""><p>50%</p></div>
+    </div>
+
+    <h2>camera-rig.svg</h2>
+    <div class="row">
+        <div class="tile"><img class="rig-100" src="../images/illustrations/camera-rig.svg" alt=""><p>400px</p></div>
+        <div class="tile gray"><img class="rig-50" src="../images/illustrations/camera-rig.svg" alt=""><p>200px</p></div>
+    </div>
+
+    <h2>icons.svg</h2>
+    <div class="row">
+        <div class="tile icons">
+            <svg><use href="../images/illustrations/icons.svg#i-book"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-rig"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-detect"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-analyze"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-deliver"/></svg>
+            <p>64px</p>
+        </div>
+        <div class="tile gray icons-big">
+            <svg><use href="../images/illustrations/icons.svg#i-book"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-rig"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-detect"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-analyze"/></svg>
+            <svg><use href="../images/illustrations/icons.svg#i-deliver"/></svg>
+            <p>128px</p>
+        </div>
+    </div>
+
+    <h2>Social share image</h2>
+    <div class="row">
+        <div class="tile"><img style="width:600px;max-width:100%" src="../images/og/dinkli-og.png" alt=""><p>images/og/dinkli-og.png (1200×630)</p></div>
+    </div>
+</body>
+</html>
