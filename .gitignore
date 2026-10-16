@@ -29,3 +29,6 @@ Thumbs.db
 node_modules/
 package-lock.json
 
+
+# Deploy build output
+_site/
