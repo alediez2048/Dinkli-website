@@ -1,3 +1,5 @@
+> Superseded by docs/plans/2026-10-16-ai-performance-repositioning/plan.md.
+
 # Dinkli Website Development Plan
 
 ## Project Overview
