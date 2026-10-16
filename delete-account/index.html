@@ -20,14 +20,37 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="page-header">
-        <div class="container">
-            <a href="../index.html">
-                <img src="../images/logos/dinkli-logo.png" alt="Dinkli Logo" class="logo">
-            </a>
-            <a href="../index.html" class="btn btn-secondary">Back to Home</a>
+    <nav class="site-nav site-nav--sticky" aria-label="Main navigation">
+        <a href="../index.html" class="site-nav__brand">
+            <img src="../images/logos/dinkli-logo.png" alt="" width="44" height="44">
+            <span>Dinkli</span>
+        </a>
+        <div class="site-nav__links">
+            <a href="../index.html#how-it-works" class="site-nav__link">How It Works</a>
+            <a href="../index.html#game-analytics" class="site-nav__link">Analytics</a>
+            <a href="../index.html#pricing" class="site-nav__link">Pricing</a>
+            <a href="../courts/" class="site-nav__link">For Courts</a>
+            <a href="../pitch-deck/" class="site-nav__link">Pitch Deck</a>
+            <a href="../contact.html" class="site-nav__link">Contact</a>
         </div>
-    </header>
+        <a href="../index.html#waitlist" class="site-nav__cta">Book a Game</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="mobile-menu-overlay">
+            <div class="mobile-menu-content">
+                <a href="../index.html#how-it-works" class="mobile-nav-link">How It Works</a>
+                <a href="../index.html#game-analytics" class="mobile-nav-link">Analytics</a>
+                <a href="../index.html#pricing" class="mobile-nav-link">Pricing</a>
+                <a href="../courts/" class="mobile-nav-link">For Courts</a>
+                <a href="../pitch-deck/" class="mobile-nav-link">Pitch Deck</a>
+                <a href="../contact.html" class="mobile-nav-link">Contact</a>
+                <a href="../index.html#waitlist" class="mobile-nav-link">Book a Game</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Account Deletion Content -->
     <section class="section" style="padding-top: var(--spacing-xl);">
