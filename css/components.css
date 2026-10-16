@@ -1980,6 +1980,16 @@
   font-weight: var(--font-bold);
 }
 
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .pricing-badge {
+    right: 12px;
+  }
+}
+
 /* Shared lead-form pieces */
 .waitlist-form select {
   flex: 1;

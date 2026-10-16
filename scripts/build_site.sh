@@ -16,6 +16,7 @@ tar -cf - \
   --exclude='./scripts' \
   --exclude='./node_modules' \
   --exclude='./_site' \
+  --exclude='./.shot' \
   --exclude='*.md' \
   --exclude='./Dinkli Screenshots' \
   --exclude='./app.json' \
