@@ -436,27 +436,132 @@
   box-shadow: 2px 2px 0 var(--black);
 }
 
-/* Eight nav buttons: keep them clear of the fixed logo, tighten spacing,
-   and switch to the hamburger menu before they run out of room. */
-.nav-links-center {
-  max-width: none;
-  padding-left: 150px;
-  gap: 0.6rem;
+/* Site navigation: one simple bar (logo, text links, one button) */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99998;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-md);
+  background: var(--white);
+  border-bottom: var(--border-thick) solid var(--black);
 }
 
-.nav-link-btn {
-  padding: 0.7rem 1rem;
-  font-size: 0.8rem;
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--black);
+  font-family: var(--font-primary);
+  font-weight: var(--font-bold);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.site-nav__brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-left: auto;
+}
+
+.site-nav__link {
+  color: var(--black);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-weight: var(--font-semibold);
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s ease;
   white-space: nowrap;
 }
 
-@media (max-width: 1180px) {
-  .nav-links-center {
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  border-bottom-color: var(--green-primary);
+}
+
+.site-nav__cta {
+  padding: 0.6rem 1.1rem;
+  background: var(--green-primary);
+  color: var(--black);
+  border: var(--border-medium) solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  font-family: var(--font-primary);
+  font-weight: var(--font-bold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-nav__cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.site-nav .mobile-menu-toggle {
+  position: static;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: auto;
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+.site-nav .hamburger-line {
+  width: 1.4rem;
+}
+
+/* Subpages keep the bar in the page flow so it never covers their content */
+.site-nav--sticky {
+  position: sticky;
+}
+
+/* The bar carries the logo, so the old floating hero logo is retired */
+.hero .logo {
+  display: none;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 960px) {
+  .site-nav__links,
+  .site-nav__cta {
     display: none;
   }
 
-  .mobile-menu-toggle {
+  .site-nav .mobile-menu-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-nav {
+    height: 64px;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .site-nav__brand img {
+    width: 38px;
+    height: 38px;
   }
 }
 

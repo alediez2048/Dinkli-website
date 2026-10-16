@@ -40,16 +40,20 @@
 </head>
 <body>
     <!-- Sticky Navigation -->
-    <nav class="sticky-nav-transparent">
-        <div class="nav-links-center">
-            <a href="../" class="nav-link-btn">For Players</a>
-            <a href="#platform" class="nav-link-btn">Platform</a>
-            <a href="#recording" class="nav-link-btn">Recording</a>
-            <a href="#pilot" class="nav-link-btn">Host Pilot</a>
-            <a href="#faq" class="nav-link-btn">FAQ</a>
-            <a href="../pitch-deck/" class="nav-link-btn">Pitch Deck</a>
-            <a href="../contact.html" class="nav-link-btn">Contact</a>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="../" class="site-nav__brand">
+            <img src="../images/logos/dinkli-logo.png" alt="" width="44" height="44">
+            <span>Dinkli</span>
+        </a>
+        <div class="site-nav__links">
+            <a href="#platform" class="site-nav__link">Platform</a>
+            <a href="#recording" class="site-nav__link">Recording</a>
+            <a href="#pilot" class="site-nav__link">Host Pilot</a>
+            <a href="#faq" class="site-nav__link">FAQ</a>
+            <a href="../" class="site-nav__link">For Players</a>
+            <a href="../pitch-deck/" class="site-nav__link">Pitch Deck</a>
         </div>
+        <a href="#host-form" class="site-nav__cta">Become a Host</a>
         <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
             <span class="hamburger-line"></span>
@@ -59,13 +63,14 @@
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay">
             <div class="mobile-menu-content">
-                <a href="../" class="mobile-nav-link">For Players</a>
                 <a href="#platform" class="mobile-nav-link">Platform</a>
                 <a href="#recording" class="mobile-nav-link">Recording</a>
                 <a href="#pilot" class="mobile-nav-link">Host Pilot</a>
                 <a href="#faq" class="mobile-nav-link">FAQ</a>
+                <a href="../" class="mobile-nav-link">For Players</a>
                 <a href="../pitch-deck/" class="mobile-nav-link">Pitch Deck</a>
-                <a href="../contact.html" class="mobile-nav-link">Contact Us</a>
+                <a href="../contact.html" class="mobile-nav-link">Contact</a>
+                <a href="#host-form" class="mobile-nav-link">Become a Host</a>
             </div>
         </div>
     </nav>
