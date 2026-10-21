@@ -26,7 +26,7 @@ This guide will help you set up a local development environment to preview chang
 
 1. Navigate to the project directory:
    ```bash
-   cd /Users/jorgealejandrodiez/Desktop/Dinkli
+   cd Dinkli-website
    ```
 
 2. Start the server:

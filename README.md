@@ -144,7 +144,6 @@ Deployment is automatic via GitHub Actions when pushing to the `main` branch. Th
 
 ## 📄 Documentation
 
-- `WEBSITE_PLAN.md` - Complete development plan and roadmap
 - `DOMAIN_SETUP.md` - Domain configuration instructions
 - `IMAGE_SETUP.md` - Image requirements and setup
 
