@@ -28,6 +28,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/icons/favicon-512.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/pitch-deck.css">
+    <script data-applypilot-deck="dinkli-courts">
+    (function () {
+      var seg = location.pathname.replace(/\/+$/, "").split("/").pop();
+      if (!seg || seg === "pitch-deck" || !/^[a-z0-9][a-z0-9-]{0,38}$/.test(seg)) return;
+      try {
+        if (new URLSearchParams(location.search).has("notrack")) localStorage.setItem("deckNoTrack", "1");
+        if (localStorage.getItem("deckNoTrack")) return;
+      } catch (e) {}
+      var b = JSON.stringify({ slug: seg, campaign: "dinkli-courts" });
+      navigator.sendBeacon
+        ? navigator.sendBeacon("https://www.jorgealejandrodiez.com/api/deck-hit", new Blob([b], { type: "text/plain" }))
+        : fetch("https://www.jorgealejandrodiez.com/api/deck-hit", { method: "POST", body: b, mode: "no-cors", keepalive: true });
+    })();
+    </script>
 </head>
 <body class="deck-page">
     <a class="skip-link" href="#deck">Skip to deck</a>

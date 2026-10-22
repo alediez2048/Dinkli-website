@@ -31,4 +31,6 @@ tar -cf - \
   --exclude='./css/sticky.css' \
   . | tar -xf - -C _site
 
+python3 scripts/make_404.py
+
 echo "Built _site/ ($(find _site -type f | wc -l | tr -d ' ') files)"
