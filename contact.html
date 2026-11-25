@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Dinkli about booking, running games, or bringing Dinkli to your club.">
+    <meta name="description" content="Contact Dinkli - Get in touch with us for support, questions, or feedback.">
     <title>Contact Us - Dinkli</title>
     
     <!-- Favicon -->
@@ -20,35 +20,14 @@
 </head>
 <body>
     <!-- Header -->
-    <nav class="site-nav site-nav--sticky" aria-label="Main navigation">
-        <a href="index.html" class="site-nav__brand">
-            <img src="images/logos/dinkli-logo.png" alt="" width="44" height="44">
-            <span>Dinkli</span>
-        </a>
-        <div class="site-nav__links">
-            <a href="index.html#how-it-works" class="site-nav__link">How It Works</a>
-            <a href="captains/" class="site-nav__link">Captains</a>
-            <a href="clubs/" class="site-nav__link">Clubs</a>
-            <a href="index.html#faq" class="site-nav__link">FAQ</a>
-            <a href="contact.html" class="site-nav__link">Contact</a>
+    <header class="page-header">
+        <div class="container">
+            <a href="index.html">
+                <img src="images/logos/dinkli-logo.png" alt="Dinkli Logo" class="logo">
+            </a>
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
         </div>
-        <a href="index.html#get-the-app" class="site-nav__cta">Get the iOS App</a>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <div class="mobile-menu-overlay">
-            <div class="mobile-menu-content">
-                <a href="index.html#how-it-works" class="mobile-nav-link">How It Works</a>
-                <a href="captains/" class="mobile-nav-link">Captains</a>
-                <a href="clubs/" class="mobile-nav-link">Clubs</a>
-                <a href="index.html#faq" class="mobile-nav-link">FAQ</a>
-                <a href="contact.html" class="mobile-nav-link">Contact</a>
-                <a href="index.html#get-the-app" class="mobile-nav-link">Get the iOS App</a>
-            </div>
-        </div>
-    </nav>
+    </header>
 
     <!-- Contact Content -->
     <section class="section" style="padding-top: var(--spacing-xl);">
@@ -59,24 +38,28 @@
                 <!-- Contact Information -->
                 <div class="card">
                     <h2 style="margin-bottom: var(--spacing-md); color: var(--green-primary);">Get in Touch</h2>
-                    <p style="margin-bottom: var(--spacing-lg);">Want to use Dinkli at your club, run games as a captain, or need help with the app? Send us a message and the team will get back to you.</p>
+                    <p style="margin-bottom: var(--spacing-lg);">Have questions, feedback, or need support? We'd love to hear from you!</p>
+                    
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Email</h3>
+                        <p><a href="mailto:alediez2408@gmail.com" style="color: var(--green-primary); text-decoration: none; font-weight: var(--font-bold);">support@dinkli.com</a></p>
+                    </div>
                     
                     <div style="margin-bottom: var(--spacing-md);">
                         <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Location</h3>
                         <p>Austin, Texas</p>
                     </div>
-
+                    
                     <div style="margin-bottom: var(--spacing-md);">
-                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Run games or courts?</h3>
-                        <p><a href="captains/" style="color: var(--black); font-weight: var(--font-bold);">For Captains</a> · <a href="clubs/" style="color: var(--black); font-weight: var(--font-bold);">For Clubs</a></p>
+                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.125rem;">Response Time</h3>
+                        <p>We typically respond within 24-48 hours</p>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="card">
                     <h2 style="margin-bottom: var(--spacing-md); color: var(--green-primary);">Send us a Message</h2>
-                    <form class="contact-form" data-formspree data-success="Thanks! Your message is on its way to the Dinkli team." style="display: flex; flex-direction: column; gap: var(--spacing-md);">
-                        <input type="hidden" name="source" value="contact">
+                    <form class="contact-form" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
                         <div>
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -85,16 +68,6 @@
                         <div>
                             <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div>
-                            <label for="role">I'm a... (optional)</label>
-                            <select id="role" name="role">
-                                <option value="">Select one</option>
-                                <option value="player">Player</option>
-                                <option value="captain">Captain</option>
-                                <option value="club">Club</option>
-                            </select>
                         </div>
                         
                         <div>
@@ -108,7 +81,6 @@
                         </div>
                         
                         <button type="submit" class="btn" style="width: 100%; margin-top: var(--spacing-sm);">Send Message</button>
-                        <p class="form-message" data-form-message role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -120,37 +92,21 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Dinkli</h3>
-                <p>Dinkli is booking for pickleball players, captains, and clubs. Sign up, book a game, and show up.</p>
-                <p style="margin-top: var(--spacing-sm);">Dinkli is based in Austin, and hosted games are currently run here.</p>
+                <p>Pickleball without all the hassle. Guaranteed pickleball playtime, skill-based matching, and equipment provided.</p>
             </div>
             <div class="footer-section">
-                <h3>For Players</h3>
+                <h3>Legal & Support</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html#how-it-works">How It Works</a></li>
-                    <li><a href="index.html#regular-games">Find Games</a></li>
-                    <li><a href="index.html#ratings">Ratings</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>For Hosts</h3>
-                <ul class="footer-links">
-                    <li><a href="captains/">Captains</a></li>
-                    <li><a href="clubs/">Clubs</a></li>
-                    <li><a href="contact.html">Get in Touch</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul class="footer-links">
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="privacy/">Privacy Policy</a></li>
                     <li><a href="delete-account.html">Account Deletion</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms/">Terms of Service</a></li>
+                    <li><a href="accessibility/">Accessibility</a></li>
+                    <li><a href="support/">Support</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Dinkli. All rights reserved. ESTD 2025</p>
+            <p>&copy; 2025 Dinkli. All rights reserved. ESTD 2025</p>
         </div>
     </footer>
 
@@ -158,3 +114,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
