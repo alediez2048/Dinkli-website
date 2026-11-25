@@ -1,19 +1,18 @@
 # Dinkli Website
 
-Website and pitch deck for Dinkli. We install a complete booking platform and AI cameras at pickleball courts.
+Website for Dinkli: pickleball booking for players, captains, and clubs.
 
 ## 🎾 About Dinkli
 
-Dinkli is a complete booking and player platform for pickleball, and its headline feature is **AI game analytics**:
+Dinkli is a pickleball booking app:
 
-- **AI Game Analytics (Record & Analyze)**: a per-game add-on. cameras installed at the court record the game, computer vision (YOLO object detection plus tracking) follows every player and the ball, and each player gets a personal video with timestamped coaching notes and game stats
-- **Dinkli Rating**: moves up or down after every analyzed game (Dinkli's own rating, not affiliated with DUPR)
-- **Court Booking**: courts, open play, clinics, leagues and recurring sessions
-- **Payments & Memberships**: one-time bookings, passes and memberships in one checkout
-- **Skill-Matched Play**: skill levels and no-show accountability
-- **Court Tools**: scheduling, policies, cancellations and player communication for host courts
+- **For Players**: Find a regular pickleball game at your level, book a spot in the iOS app, and show up. After each game, players rate each other's skill, so matchups stay even.
+- **For Captains**: Run games at clubs and charge in the app, instead of group chats and Venmo. Dinkli lists your game at your price, players pay in the app, and Dinkli sends you your share.
+- **For Clubs**: Players see a session, book a spot, pay, and show up. Ratings help keep games even. Start with one session. Works alongside how you run things today.
 
-The homepage and pitch deck speak to court owners. The mission is the best booking experience in pickleball for their players. Cameras are installed permanently at each court, and players add Record & Analyze per game. `/courts/` redirects to the homepage.
+**Coming soon:** AI recording. Upload a game from your phone and get video plus a highlight in the app.
+
+The homepage speaks to players. `/captains/` and `/clubs/` pages speak to hosts. iOS only. No installed cameras, no camera-driven ratings.
 
 ## 🎨 Design
 
@@ -33,18 +32,18 @@ This website uses a **neurobrutalism** design style featuring:
 
 ```
 Dinkli/
-├── index.html              # Homepage (court owners)
-├── courts/                 # Redirects to the homepage
-├── pitch-deck/             # Court-host pitch deck (prints to 11 landscape pages)
+├── index.html              # Homepage (players: sign up and show up)
+├── captains/               # Captains page
+├── clubs/                  # Clubs page
+├── courts/                 # Redirects to /clubs/
+├── pitch-deck/             # Redirects to /clubs/ (unpublished)
 ├── contact.html, privacy-policy.html, privacy/, delete-account.html, delete-account/
 ├── css/
 │   ├── style.css           # Base styles & design tokens
-│   ├── components.css      # Component styles (incl. AI game analytics components)
-│   ├── marquee.css         # Ticker
-│   └── pitch-deck.css      # Deck styles
+│   ├── components.css      # Component styles
+│   └── marquee.css         # Ticker
 ├── js/
-│   ├── main.js             # FAQ, nav, Formspree lead forms, scroll reveal
-│   └── pitch-deck.js       # Deck navigation and print
+│   └── main.js             # FAQ, nav, Formspree lead forms, scroll reveal
 ├── images/
 │   ├── illustrations/      # Designed SVG illustrations + icons.svg sprite
 │   ├── og/                 # Social share image (rendered by scripts/render_og.sh)
@@ -64,9 +63,9 @@ bash scripts/build_site.sh      # builds the filtered _site/ that gets deployed
 bash scripts/render_og.sh       # re-renders images/og/dinkli-og.png after changing the hero illustration
 ```
 
-Lead forms post to Formspree (`js/main.js`, `FORMSPREE_ENDPOINT`) with a hidden `source` field: `court-owner` or `contact`.
+Lead forms post to Formspree (`js/main.js`, `FORMSPREE_ENDPOINT`) with a hidden `source` field: `player`, `captain`, `club`, or `contact`.
 
-Copy rule: no invented metrics, testimonials, accuracy figures, turnaround promises or "first/only" claims. `check_site.py` enforces the obvious cases.
+Copy rule: no invented metrics, testimonials, accuracy figures, turnaround promises or "first/only" claims. No em dashes. Rating wording must be exact: "After each game, players rate each other's skill, so matchups stay even." Never use "Dinkli Rating" on the new site. `check_site.py` enforces the obvious cases.
 
 ## 🚀 Getting Started
 
@@ -120,9 +119,9 @@ Deployment is automatic via GitHub Actions when pushing to the `main` branch. Th
 
 ### Making Changes
 
-1. Work on the `develop` branch
+1. Work on the `develop` branch (or a feature branch)
 2. Test locally
-3. Commit and push to `develop`
+3. Commit and push
 4. Merge to `main` when ready to deploy
 
 ## 🛠️ Technologies
