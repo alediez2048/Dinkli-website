@@ -30,7 +30,19 @@ BANNED = re.compile(
     r'|\d+(\.\d+)?\s?%'
     r'|\bguaranteed\b'
     r'|\baccura(te|cy)\b'
-    r'|DUPR-certified',
+    r'|DUPR-certified'
+    r'|\binstalled.cameras?\b'
+    r'|\bcamera.?install(ed|ation)?\b'
+    r'|\bcamera.?rig\b'
+    r'|\bcamera.?driven\b'
+    r'|\bYOLO\b'
+    r'|\bDinkli Rating\b'
+    r'|\bcoaching.?notes?\b'
+    r'|\binstall.?pilot\b'
+    r'|\b30.?day.?pilot\b'
+    r'|\bRecord.?&.?Analyze\b'
+    r'|\bem dash\b'
+    r'|—',
     re.IGNORECASE,
 )
 
